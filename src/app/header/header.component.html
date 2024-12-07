@@ -3,10 +3,32 @@
     <div class="logo">
       <a routerLink="/">My Logo</a>
     </div>
-    <div class="nav-links">
+
+    <!-- Desktop  -->
+    <div class="nav-links desktop">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
       <a routerLink="/about" routerLinkActive="active">About</a>
       <a routerLink="/contact" routerLinkActive="active">Contact</a>
     </div>
+
+    <!-- Hamburger  -->
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!--  Overlay Menu -->
+  <div class="mobile-menu" [class.open]="isMenuOpen">
+    <div class="mobile-nav-links">
+      <a routerLink="/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: true}"
+         (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active"
+         (click)="closeMenu()">About</a>
+      <a routerLink="/contact" routerLinkActive="active"
+         (click)="closeMenu()">Contact</a>
+    </div>
+  </div>
 </header>

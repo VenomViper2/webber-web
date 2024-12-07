@@ -1,11 +1,9 @@
-/* Reset defaults and set border-box */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Set core body defaults */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -19,29 +17,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Make images easier to work with */
 img, picture, svg {
   max-width: 100%;
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input, button, textarea, select {
   font: inherit;
 }
 
-/* Remove list styles on ul, ol elements */
 ul, ol {
   list-style: none;
 }
 
-/* Set core link defaults */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Set default container */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -49,7 +42,6 @@ a {
   padding: 1rem;
 }
 
-/* Basic responsive typography */
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.2;
@@ -69,12 +61,24 @@ p {
 }
 
 /* Basic spacing utilities */
-.mt-1 { margin-top: 1rem; }
-.mb-1 { margin-bottom: 1rem; }
-.py-1 { padding-top: 1rem; padding-bottom: 1rem; }
-.px-1 { padding-left: 1rem; padding-right: 1rem; }
+.mt-1 {
+  margin-top: 1rem;
+}
 
-/* Basic flex utilities */
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -91,20 +95,12 @@ p {
   justify-content: space-between;
 }
 
-/* Basic grid utilities */
-.grid {
+grid {
   display: grid;
   gap: 1rem;
 }
 
-/* Basic responsive breakpoints */
-@media (min-width: 640px) {
-  .container {
-    padding: 2rem;
-  }
-}
 
-/* Remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
