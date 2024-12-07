@@ -1,0 +1,50 @@
+name: Angular CI/CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Run tests
+        run: |
+          npm run test -- --watch=false --browsers=ChromeHeadless
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Create 404 page
+        run: |
+          if [ -f "dist/webber-web/browser/browser/index.html" ]; then
+            cp dist/webber-web/browser/browser/index.html dist/webber-web/browser/browser/404.html
+            echo "404 page created successfully"
+          else
+            echo "index.html not found at expected location"
+            find dist -name "index.html"
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/webber-web/browser/browser
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true

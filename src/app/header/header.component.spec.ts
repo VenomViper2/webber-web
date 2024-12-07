@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 
@@ -15,14 +15,14 @@ class ContactStubComponent {}
 @Component({ standalone: true, template: '' })
 class NotFoundStubComponent {}
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        AppComponent,
+        HeaderComponent,
         RouterModule.forRoot([
           { path: '', component: HomeStubComponent },
           { path: 'about', component: AboutStubComponent },
@@ -34,12 +34,19 @@ describe('AppComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have navigation links', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('[routerLink="/"]')).toBeTruthy();
+    expect(compiled.querySelector('[routerLink="/about"]')).toBeTruthy();
+    expect(compiled.querySelector('[routerLink="/contact"]')).toBeTruthy();
   });
 });
