@@ -1,19 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
 
-@Component({ standalone: true, template: '' })
-class HomeStubComponent {}
-
-@Component({ standalone: true, template: '' })
-class AboutStubComponent {}
-
-@Component({ standalone: true, template: '' })
-class ContactStubComponent {}
-
-@Component({ standalone: true, template: '' })
-class NotFoundStubComponent {}
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -24,10 +12,7 @@ describe('AppComponent', () => {
       imports: [
         AppComponent,
         RouterModule.forRoot([
-          { path: '', component: HomeStubComponent },
-          { path: 'about', component: AboutStubComponent },
-          { path: 'contact', component: ContactStubComponent },
-          { path: '**', component: NotFoundStubComponent }
+
         ])
       ]
     }).compileComponents();
