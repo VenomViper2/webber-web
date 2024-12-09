@@ -17,6 +17,8 @@ export class AppListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apps = this.appService.getAllApps();
+    this.appService.getAllApps().subscribe(apps => {
+      this.apps = apps;
+    });
   }
 }
