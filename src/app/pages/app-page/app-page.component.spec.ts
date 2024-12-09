@@ -8,34 +8,34 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 
 describe('AppPageComponent', () => {
-  let component: AppPageComponent;
-  let fixture: ComponentFixture<AppPageComponent>;
+    let component: AppPageComponent;
+    let fixture: ComponentFixture<AppPageComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppPageComponent],
-      providers: [
-        ApplicationService,
-        provideHttpClient(),
-        provideHttpClientTesting(),
-        {
-          provide: ActivatedRoute,
-          useValue: {
-            params: of({ id: '1' })  // Mock route params
-          }
-        }
-      ]
-    })
-      .compileComponents();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [AppPageComponent],
+            providers: [
+                ApplicationService,
+                provideHttpClient(),
+                provideHttpClientTesting(),
+                {
+                    provide: ActivatedRoute,
+                    useValue: {
+                        params: of({id: '1'})  // Mock route params
+                    }
+                }
+            ]
+        })
+                .compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AppPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AppPageComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

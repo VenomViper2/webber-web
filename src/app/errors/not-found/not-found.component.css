@@ -1,44 +1,44 @@
 .error-container {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 .error-content {
-  max-width: 500px;
+    max-width: 500px;
 }
 
 h1 {
-  font-size: 6rem;
-  margin: 0;
-  color: #333;
-  line-height: 1;
+    font-size: 6rem;
+    margin: 0;
+    color: #333;
+    line-height: 1;
 }
 
 h2 {
-  font-size: 2rem;
-  margin: 0 0 1rem;
-  color: #666;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    color: #666;
 }
 
 p {
-  color: #666;
-  margin-bottom: 2rem;
+    color: #666;
+    margin-bottom: 2rem;
 }
 
 .home-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .home-button:hover {
-  background-color: #555;
+    background-color: #555;
 }

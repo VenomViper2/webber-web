@@ -1,46 +1,46 @@
 <header class="header">
-  <nav class="nav-container">
-    <div class="logo">
-      <a routerLink="/">My Logo</a>
-    </div>
+    <nav class="nav-container">
+        <div class="logo">
+            <a routerLink="/">My Logo</a>
+        </div>
 
-    <div class="nav-links desktop">
-      @for (link of navigationLinks; track link.path) {
-        @if (!link.dropdownItems) {
-          <a [routerLink]="link.path" routerLinkActive="active"
-             [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
-        } @else {
-          <div class="dropdown">
-            <div class="dropdown-toggle">
-              <a [routerLink]="link.path" routerLinkActive="active"
-                 [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
-              <span class="arrow-down"></span>
-            </div>
-            <div class="dropdown-menu">
-              @for (item of link.dropdownItems; track item.path) {
-                <a [routerLink]="item.path" routerLinkActive="active"
-                   [routerLinkActiveOptions]="{exact: item.exact!}">{{ item.label }}</a>
-              }
-            </div>
-          </div>
-        }
-      }
-    </div>
+        <div class="nav-links desktop">
+            @for (link of navigationLinks; track link.path) {
+                @if (!link.dropdownItems) {
+                    <a [routerLink]="link.path" routerLinkActive="active"
+                       [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
+                } @else {
+                    <div class="dropdown">
+                        <div class="dropdown-toggle">
+                            <a [routerLink]="link.path" routerLinkActive="active"
+                               [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
+                            <span class="arrow-down"></span>
+                        </div>
+                        <div class="dropdown-menu">
+                            @for (item of link.dropdownItems; track item.path) {
+                                <a [routerLink]="item.path" routerLinkActive="active"
+                                   [routerLinkActiveOptions]="{exact: item.exact!}">{{ item.label }}</a>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
 
-    <button class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+        <button (click)="toggleMenu()" [class.open]="isMenuOpen" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
 
-  <div class="mobile-menu" [class.open]="isMenuOpen">
-    <div class="mobile-nav-links">
-      @for (link of navigationLinks; track link.path) {
-        <a [routerLink]="link.path" routerLinkActive="active"
-           [routerLinkActiveOptions]="{exact: link.exact!}"
-           (click)="closeMenu()">{{ link.label }}</a>
-      }
+    <div [class.open]="isMenuOpen" class="mobile-menu">
+        <div class="mobile-nav-links">
+            @for (link of navigationLinks; track link.path) {
+                <a [routerLink]="link.path" routerLinkActive="active"
+                   [routerLinkActiveOptions]="{exact: link.exact!}"
+                   (click)="closeMenu()">{{ link.label }}</a>
+            }
+        </div>
     </div>
-  </div>
 </header>

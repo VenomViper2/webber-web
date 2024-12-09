@@ -1,28 +1,28 @@
-import {Injectable} from '@angular/core';
-import {App} from '../model/App';
-import {HttpClient} from '@angular/common/http';
-import {map, Observable, tap} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { App } from '../model/App';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable, tap } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ApplicationService {
-  private applications: App[] = [];
+    private applications: App[] = [];
 
-  constructor(private http: HttpClient) {
-  }
+    constructor(private http: HttpClient) {
+    }
 
-  getAllApps(): Observable<App[]> {
-    return this.http.get<{ apps: App[] }>('data/apps.json')
-      .pipe(
-        map(response => response.apps),
-        tap(apps => this.applications = apps)
-      );
-  }
+    getAllApps(): Observable<App[]> {
+        return this.http.get<{ apps: App[] }>('data/apps.json')
+                .pipe(
+                        map(response => response.apps),
+                        tap(apps => this.applications = apps)
+                );
+    }
 
-  getApp(id: string): Observable<App | undefined> {
-    return this.getAllApps().pipe(
-      map(apps => apps.find(app => app.id === id))
-    );
-  }
+    getApp(id: string): Observable<App | undefined> {
+        return this.getAllApps().pipe(
+                map(apps => apps.find(app => app.id === id))
+        );
+    }
 }
