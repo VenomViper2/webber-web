@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.appService.getAllApps().subscribe(apps => {
       const appLinks = apps.map(app => ({
-        path: `/app/${app.id}`,
+        path: `/app-list/${app.id}`,  // Updated path
         label: app.name
       }));
 

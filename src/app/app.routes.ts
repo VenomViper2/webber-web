@@ -18,13 +18,18 @@ export const routes: Routes = [
   },
   {
     path: 'app-list',
-    loadComponent: () => import('./pages/app-list/app-list.component').then(m => m.AppListComponent),
-    title: 'Application List'
-  },
-  {
-    path: 'app/:id',  // Add this route
-    loadComponent: () => import('./pages/app-page/app-page.component').then(m => m.AppPageComponent),
-    title: 'Application'
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./pages/app-list/app-list.component').then(m => m.AppListComponent),
+        title: 'Application List'
+      },
+      {
+        path: ':id',
+        loadComponent: () => import('./pages/app-page/app-page.component').then(m => m.AppPageComponent),
+        title: 'Application'
+      }
+    ]
   },
   {
     path: '**',
