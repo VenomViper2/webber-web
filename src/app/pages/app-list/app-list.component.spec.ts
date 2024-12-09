@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AppListComponent } from './app-list.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { ApplicationService } from '../../service/application.service';
+import {provideHttpClient} from '@angular/common/http';
 
 describe('AppListComponent', () => {
   let component: AppListComponent;
@@ -8,10 +10,16 @@ describe('AppListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppListComponent]
+      imports: [ AppListComponent ],
+      providers: [
+        ApplicationService,
+        provideHttpClient(),
+      ]
     })
-    .compileComponents();
+      .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(AppListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
