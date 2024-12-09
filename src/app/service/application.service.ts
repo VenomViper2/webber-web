@@ -31,7 +31,7 @@ export class ApplicationService {
   }
 
   private loadApps() {
-    this.http.get<{ apps: App[] }>('/assets/apps.json')
+    this.http.get<{ apps: App[] }>('data/apps.json')
       .subscribe({
         next: (data) => {
           this.applications = data.apps;
