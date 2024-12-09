@@ -13,13 +13,20 @@ import {NavigationLink} from './NavigationLink';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+
+  // App list
+  appLinks: NavigationLink[] = [
+    {path: '/app1', label: 'App1'},
+    {path: '/app2', label: 'App2'},
+    {path: '/app3', label: 'App3'},
+  ];
+
   navigationLinks: NavigationLink[] = [
     {path: '/', label: 'Home', exact: true},
     {path: '/about', label: 'About'},
     {path: '/contact', label: 'Contact'},
+    {path: '/apps', label: 'Apps', dropdownItems: this.appLinks},  // Add 'this'
   ];
-
-
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';

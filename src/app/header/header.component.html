@@ -7,12 +7,26 @@
     <!-- Desktop  -->
     <div class="nav-links desktop">
       @for (link of navigationLinks; track link.path) {
-        <a [routerLink]="link.path" routerLinkActive="active"
-           [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
+        @if (!link.dropdownItems) {
+          <a [routerLink]="link.path" routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
+        } @else {
+          <div class="dropdown">
+            <button class="dropdown-toggle">
+              {{ link.label }}
+              <span class="arrow-down"></span>
+            </button>
+            <div class="dropdown-menu">
+              @for (item of link.dropdownItems; track item.path) {
+                <a [routerLink]="item.path" routerLinkActive="active"
+                   [routerLinkActiveOptions]="{exact: item.exact!}">{{ item.label }}</a>
+              }
+            </div>
+          </div>
+        }
       }
     </div>
 
-    <!-- Hamburger  -->
     <button class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen">
       <span></span>
       <span></span>
@@ -20,7 +34,6 @@
     </button>
   </nav>
 
-  <!--  Overlay Menu -->
   <div class="mobile-menu" [class.open]="isMenuOpen">
     <div class="mobile-nav-links">
       @for (link of navigationLinks; track link.path) {
