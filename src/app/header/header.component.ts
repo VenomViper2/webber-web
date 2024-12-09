@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {NavigationLink} from './NavigationLink';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,12 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+  navigationLinks: NavigationLink[] = [
+    {path: '/', label: 'Home', exact: true},
+    {path: '/about', label: 'About'},
+    {path: '/contact', label: 'Contact'},
+  ];
+
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
