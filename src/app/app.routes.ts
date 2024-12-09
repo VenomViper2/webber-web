@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-
   {
     path: '',
     loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
@@ -21,6 +20,11 @@ export const routes: Routes = [
     path: 'app-list',
     loadComponent: () => import('./pages/app-list/app-list.component').then(m => m.AppListComponent),
     title: 'Application List'
+  },
+  {
+    path: 'app/:id',  // Add this route
+    loadComponent: () => import('./component/app-page/app-page.component').then(m => m.AppPageComponent),
+    title: 'Application'
   },
   {
     path: '**',

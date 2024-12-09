@@ -1,4 +1,6 @@
 @for (app of apps; track app.id) {
+  <a [routerLink]="['/app', app.id]">Open App</a>
+
   <p>{{app.name}}</p>
   <p>{{app.description}}</p>
   <p>{{app.features}}</p>

@@ -20,4 +20,9 @@ export class ApplicationService {
       );
   }
 
+  getApp(id: string): Observable<App | undefined> {
+    return this.getAllApps().pipe(
+      map(apps => apps.find(app => app.id === id))
+    );
+  }
 }
