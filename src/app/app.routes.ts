@@ -23,7 +23,7 @@ export const routes: Routes = [
   },
   {
     path: 'app/:id',  // Add this route
-    loadComponent: () => import('./component/app-page/app-page.component').then(m => m.AppPageComponent),
+    loadComponent: () => import('./pages/app-page/app-page.component').then(m => m.AppPageComponent),
     title: 'Application'
   },
   {

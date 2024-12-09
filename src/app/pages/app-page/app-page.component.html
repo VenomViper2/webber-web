@@ -1,0 +1,9 @@
+@if (app) {
+  <div class="app-container">
+    <h1>{{ app.name }}</h1>
+    <img [src]="app.images[0]" [alt]="app.name">
+    <p class="description">{{ app.fullDescription }}</p>
+  </div>
+} @else {
+  <div>App not found</div>
+}
