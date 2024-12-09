@@ -1,1 +1,7 @@
-<p>app-list works!</p>
+@for (app of apps; track app.id) {
+  <p>{{app.name}}</p>
+  <p>{{app.description}}</p>
+  <p>{{app.features}}</p>
+  <p>{{app.fullDescription}}</p>
+  <p>{{app.id}}</p>
+}

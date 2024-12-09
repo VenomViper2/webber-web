@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {NavigationLink} from '../models/NavigationLink';
+import {NavigationLink} from '../model/NavigationLink';
 
 @Component({
   selector: 'app-header',

@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "id": "app1",
+      "name": "Calculator",
+      "description": "Basic calculator with scientific functions",
+      "fullDescription": "A comprehensive calculator application featuring both basic arithmetic and advanced scientific calculations.",
+      "images": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ]
+    },
+    {
+      "id": "app2",
+      "name": "Todo List",
+      "description": "Simple task management",
+      "fullDescription": "Keep track of your daily tasks with this intuitive todo list application.",
+      "images": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ]
+    }
+  ]
+}
