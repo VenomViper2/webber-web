@@ -1,1 +1,0 @@
-import{Ea as n,Fa as o,Na as a,Pa as s,S as p}from"./chunk-NBJIYC4C.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=p({type:t,selectors:[["app-app-list"]],standalone:!0,features:[s],decls:2,vars:0,template:function(e,m){e&1&&(n(0,"p"),a(1,"app-list works!"),o())}})};export{i as AppListComponent};
