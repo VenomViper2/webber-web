@@ -18,6 +18,11 @@ export const routes: Routes = [
     title: 'Contact'
   },
   {
+    path: 'app-list',
+    loadComponent: () => import('./pages/app-list/app-list.component').then(m => m.AppListComponent),
+    title: 'Application List'
+  },
+  {
     path: '**',
     loadComponent: () => import('./errors/not-found/not-found.component').then(m => m.NotFoundComponent),
     title: '404 - Not Found'

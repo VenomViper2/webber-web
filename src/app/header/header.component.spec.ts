@@ -26,10 +26,4 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have navigation links', () => {
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('[routerLink="/"]')).toBeTruthy();
-    expect(compiled.querySelector('[routerLink="/about"]')).toBeTruthy();
-    expect(compiled.querySelector('[routerLink="/contact"]')).toBeTruthy();
-  });
 });

@@ -4,7 +4,6 @@
       <a routerLink="/">My Logo</a>
     </div>
 
-    <!-- Desktop  -->
     <div class="nav-links desktop">
       @for (link of navigationLinks; track link.path) {
         @if (!link.dropdownItems) {
@@ -12,10 +11,11 @@
              [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
         } @else {
           <div class="dropdown">
-            <button class="dropdown-toggle">
-              {{ link.label }}
+            <div class="dropdown-toggle">
+              <a [routerLink]="link.path" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{exact: link.exact!}">{{ link.label }}</a>
               <span class="arrow-down"></span>
-            </button>
+            </div>
             <div class="dropdown-menu">
               @for (item of link.dropdownItems; track item.path) {
                 <a [routerLink]="item.path" routerLinkActive="active"

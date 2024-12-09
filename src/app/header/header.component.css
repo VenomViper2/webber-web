@@ -44,7 +44,6 @@
   border-bottom: 2px solid #000;
 }
 
-/* Hamburger Menu Styles */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -68,7 +67,6 @@
   transform-origin: 1px;
 }
 
-/* Menu Overlay */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -106,7 +104,6 @@
   transition: color 0.3s ease;
 }
 
-/* Hamburger Animation */
 .hamburger.open span:first-child {
   transform: rotate(45deg);
   background: #333;
@@ -132,7 +129,6 @@
   border: none;
   color: #666;
   font-weight: 500;
-  padding: 0.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -183,7 +179,6 @@
   color: #333;
 }
 
-/* Adjust mobile menu to handle dropdowns */
 @media (max-width: 768px) {
   .dropdown-menu {
     position: static;

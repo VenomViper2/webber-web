@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {NavigationLink} from './NavigationLink';
+import {NavigationLink} from '../models/NavigationLink';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +25,7 @@ export class HeaderComponent {
     {path: '/', label: 'Home', exact: true},
     {path: '/about', label: 'About'},
     {path: '/contact', label: 'Contact'},
-    {path: '/apps', label: 'Apps', dropdownItems: this.appLinks},  // Add 'this'
+    {path: '/app-list', label: 'Apps', dropdownItems: this.appLinks},
   ];
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
