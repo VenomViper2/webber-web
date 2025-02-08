@@ -1,0 +1,44 @@
+{
+  "feats": [
+    {
+      "id": "1",
+      "name": "Gold Feats",
+      "description": "Basic description",
+      "fullDescription": "Full description of the feat",
+      "images": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "red Feats",
+      "description": "Basic description",
+      "fullDescription": "  Full description of the feat",
+      "images": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Blue Feats",
+      "description": "Basic description",
+      "fullDescription": "  Full description of the feat",
+      "images": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Green Feats",
+      "description": "Basic description",
+      "fullDescription": "  Full description of the feat",
+      "images": [
+        "https://placehold.co/600x400",
+        "https://placehold.co/600x400"
+      ]
+    }
+  ]
+}
