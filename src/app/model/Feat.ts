@@ -3,13 +3,12 @@ export interface Feat {
     name: string;
     description: string;
     fullDescription: string;
-    features: string[];
     images: string[];
+    featList: FeatDetail[];
 }
-
-export interface FeatCard {
-    id: string;
+export interface FeatDetail {
     name: string;
     description: string;
-    imagePath: string;
+    level: string;
+    type: string;
 }

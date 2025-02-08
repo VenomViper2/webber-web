@@ -1,9 +1,18 @@
 @if (feat) {
     <div class="app-container">
         <h1>{{ feat.name }}</h1>
-        <img [src]="feat.images[0]" [alt]="feat.name">
-        <p class="description">{{ feat.fullDescription }}</p>
+        <div class="feat-header">
+            <img [src]="feat.images[0]" [alt]="feat.name" class="feat-image">
+            <p class="description">{{ feat.fullDescription }}</p>
+        </div>
     </div>
+    @for (feature of feat.featList; track feature) {
+        <div class="feat-item">
+            <h3>{{ feature.name }}</h3>
+            <p>{{ feature.level }}<span class="type-span">{{ feature.type }}</span></p>
+            <p>{{ feature.description }}</p>
+        </div>
+    }
 } @else {
     <div>Feat not found</div>
 }

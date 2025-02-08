@@ -1,17 +1,58 @@
 .app-container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-img {
-    max-width: 100%;
+.feat-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.feat-image {
+    max-width: 40%;
     height: auto;
-    border-radius: 8px;
-    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .description {
-    line-height: 1.6;
+    font-size: 1.2em;
     color: #333;
+    margin-top: 10px;
+}
+
+.feat-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feat-item h3 {
+    font-size: 1.5em;
+    color: #444;
+}
+
+.feat-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+.type-span {
+    margin-left: 10px;
+    display: inline-block;
+    font-weight: bold;
+    color: #888;
 }

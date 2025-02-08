@@ -17,21 +17,6 @@ export const routes: Routes = [
         title: 'Contact'
     },
     {
-        path: 'app-list',
-        children: [
-            {
-                path: '',
-                loadComponent: () => import('./pages/app-list/app-list.component').then(m => m.AppListComponent),
-                title: 'Application List'
-            },
-            {
-                path: ':id',
-                loadComponent: () => import('./pages/app-page/app-page.component').then(m => m.AppPageComponent),
-                title: 'Application'
-            }
-        ]
-    },
-    {
         path: 'feat-list',
         children: [
             {
