@@ -1,0 +1,9 @@
+@if (feat) {
+    <div class="app-container">
+        <h1>{{ feat.name }}</h1>
+        <img [src]="feat.images[0]" [alt]="feat.name">
+        <p class="description">{{ feat.fullDescription }}</p>
+    </div>
+} @else {
+    <div>Feat not found</div>
+}

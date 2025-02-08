@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavigationLink } from '../../model/NavigationLink';
 import { ApplicationService } from '../../service/application.service';
+import { FeatService } from "../../service/feat.service";
 
 @Component({
     selector: 'app-header',
@@ -18,12 +19,18 @@ export class HeaderComponent implements OnInit {
         {path: '/about', label: 'About'},
         {path: '/contact', label: 'Contact'},
         {path: '/app-list', label: 'Apps', dropdownItems: []},
+        {path: '/feat-list', label: 'Feats', dropdownItems: []},
     ];
 
-    constructor(private appService: ApplicationService) {
+    constructor(private appService: ApplicationService, private featService: FeatService) {
     }
 
     ngOnInit() {
+        this.populateApps();
+        this.populateFeats();
+    }
+
+    populateApps() {
         this.appService.getAllApps().subscribe(apps => {
             const appLinks = apps.map(app => ({
                 path: `/app-list/${ app.id }`,
@@ -36,6 +43,21 @@ export class HeaderComponent implements OnInit {
             }
         });
     }
+
+    populateFeats() {
+        this.featService.getAllFeats().subscribe(feat => {
+            const featLinks = feat.map(feat => ({
+                path: `/feat-list/${ feat.id }`,
+                label: feat.name
+            }));
+
+            const featsNav = this.navigationLinks.find(nav => nav.path === '/feat-list');
+            if (featsNav) {
+                featsNav.dropdownItems = featLinks;
+            }
+        });
+    }
+
 
     toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
