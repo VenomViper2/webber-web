@@ -201,8 +201,8 @@
     {
       "id": "2",
       "name": "Red Feats",
-      "description": "Basic description",
-      "fullDescription": "Full description of the feat",
+      "description": "Add 1d4 to the damage of an attack that has landed.",
+      "fullDescription": "Add 1d4 to the damage of an attack that has landed.",
       "images": [
         "red-light.jpg"
       ],
@@ -402,8 +402,8 @@
     {
       "id": "3",
       "name": "Blue Feats",
-      "description": "Basic description",
-      "fullDescription": "Full description of the feat",
+      "description": "Re-roll up to 3 dice of any roll after skill re-rolls, but before pulling from the river.",
+      "fullDescription": "Re-roll up to 3 dice of any roll after skill re-rolls, but before pulling from the river.",
       "images": [
         "blue-light.jpg"
       ],
@@ -600,8 +600,8 @@
     {
       "id": "4",
       "name": "Green Feats",
-      "description": "Basic description",
-      "fullDescription": "Full description of the feat",
+      "description": "Recover Finesse+d6 wounds. Whilst asleep, roll 2d6 and pick the highest.",
+      "fullDescription": "Recover Finesse+d6 wounds. Whilst asleep, roll 2d6 and pick the highest.",
       "images": [
         "green-light.jpg"
       ],
