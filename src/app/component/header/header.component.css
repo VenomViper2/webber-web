@@ -235,6 +235,10 @@
 .arrow-down {
     transition: transform 0.3s ease;
 }
+.app-logo {
+    width: 3rem; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}
 
 @media (max-width: 768px) {
     .nav-links.desktop {
