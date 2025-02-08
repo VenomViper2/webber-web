@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
     isMenuOpen = false;
     navigationLinks: NavigationLink[] = [
         {path: '/', label: 'Home', exact: true},
-        {path: '/about', label: 'About'},
-        {path: '/contact', label: 'Contact'},
+        {path: '/mechanics', label: 'Cheat Sheet', exact: true},
         {path: '/feat-list', label: 'Feats', dropdownItems: []},
     ];
 
@@ -26,7 +25,6 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         this.populateFeats();
     }
-
 
 
     populateFeats() {

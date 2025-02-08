@@ -1,0 +1,67 @@
+<div class="mechanics-container">
+    @if (viewModel$ | async; as vm) {
+        <section class="combat-section">
+            <h2>Combat Actions</h2>
+            <div class="actions-grid">
+                @for (action of vm.combatActions; track action.name) {
+                    <div class="action-card" [ngClass]="action.type.toLowerCase()">
+                        <h3>{{ action.name }}</h3>
+                        <div class="action-type">{{ action.type }}</div>
+                        <p>{{ action.description }}</p>
+                        @if (action.cost) {
+                            <div class="cost">Cost: {{ action.cost }}</div>
+                        }
+                        @if (action.refresh) {
+                            <div class="refresh">Refresh: {{ action.refresh }}</div>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="feats-section">
+            <h2>Basic Feats</h2>
+            <div class="feats-grid">
+                @for (feat of vm.basicFeats; track feat.name) {
+                    <div class="feat-card" [ngClass]="feat.type.toLowerCase()">
+                        <h3>{{ feat.name }}</h3>
+                        <div class="feat-type">{{ feat.type }}</div>
+                        <p>{{ feat.effect }}</p>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="characteristics-section">
+            <h2>Derived Stats</h2>
+            <div class="stats-grid">
+                @for (stat of getStatsEntries(vm.characteristics.derivedStats); track stat.name) {
+                    <div class="stat-card">
+                        <h3>{{ stat.name }}</h3>
+                        <p class="formula">{{ stat.formula }}</p>
+                        @if (stat.baseValue) {
+                            <p class="base-value">Base: {{ stat.baseValue }}</p>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <h2>Experience Costs</h2>
+            <div class="costs-grid">
+                @for (cost of getExperienceCostEntries(vm.experienceCosts); track cost.type) {
+                    <div class="cost-card">
+                        <h3>{{ cost.type }}</h3>
+                        @if (cost.formula) {
+                            <p>Formula: {{ cost.formula }}</p>
+                        }
+                        @if (cost.cost !== undefined) {
+                            <p>Fixed Cost: {{ cost.cost }}</p>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+    }
+</div>

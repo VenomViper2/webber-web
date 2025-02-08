@@ -17,6 +17,12 @@ export const routes: Routes = [
         title: 'Contact'
     },
     {
+        path: 'mechanics',
+        loadComponent: () => import('./pages/game-mechanics/game-mechanics.component').then(m => m.GameMechanicsComponent),
+        title: 'Game Mechanics'
+    },
+
+    {
         path: 'feat-list',
         children: [
             {

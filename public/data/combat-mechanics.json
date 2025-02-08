@@ -1,0 +1,206 @@
+{
+  "combatActions": {
+    "baseActions": [
+      {
+        "name": "Attack",
+        "description": "Attack Skill against target's Defence to deal weapon's damage",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Defend",
+        "description": "Treat your Finesse as being 4 higher for calculating your defence until next turn",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Feat",
+        "description": "Make use of one of the Feats of Light which require an Action to use",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Miscellaneous",
+        "description": "Use a skill within reasonable bounds, as determined by the GM",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Delay Action",
+        "description": "Take your action after the next person's turn. This is your new initiative",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Move",
+        "description": "Move considerably further than usual",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Preparation",
+        "description": "Prepare weapon after being used for a ranged attack",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Study Enemy",
+        "description": "Test Mind against against the opponent's Mind Defence to gain a Boon",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Take Stock",
+        "description": "Test Heart Awareness to look around for something that can be done",
+        "type": "Standard",
+        "cost": 1
+      },
+      {
+        "name": "Monologue",
+        "description": "Speak up to 10 additional words",
+        "type": "Standard",
+        "cost": 1
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Yell Out",
+        "description": "Call out 4 words",
+        "type": "Reaction",
+        "refresh": "Start of turn"
+      }
+    ],
+    "movement": {
+      "standardMove": "5 words",
+      "actionsPerTurn": 1,
+      "reactionsPerTurn": 1
+    }
+  },
+  "extendedTasks": {
+    "components": [
+      {
+        "name": "Interval",
+        "description": "Time that must be taken between attempts"
+      },
+      {
+        "name": "Progress TN",
+        "description": "Target number that must be reached for any progress to be added"
+      },
+      {
+        "name": "Completion TN",
+        "description": "Target number that must be reached cumulatively through all attempts"
+      }
+    ]
+  },
+  "basicFeats": [
+    {
+      "name": "Red",
+      "effect": "Add 1d4 to the damage of an attack that has landed",
+      "type": "Combat"
+    },
+    {
+      "name": "Green",
+      "effect": "Recover Finesse+d6 wounds. Whilst asleep, roll 2d6 and pick the highest",
+      "type": "Healing"
+    },
+    {
+      "name": "Blue",
+      "effect": "Re-roll up to 3 dice of any roll after skill re-rolls, but before pulling from the river",
+      "type": "Utility"
+    },
+    {
+      "name": "Gold",
+      "effect": "Spend gold in lieu of light cost for any non-basic feat of any colour",
+      "type": "Resource"
+    }
+  ],
+  "boonTriggers": [
+    {
+      "trigger": "Dropping from above 10hp, to 10hp or below",
+      "type": "Health"
+    },
+    {
+      "trigger": "Having the highest initiative in the first round of combat",
+      "type": "Combat"
+    },
+    {
+      "trigger": "Land the final hit on a foe during a combat in which that foe dealt no damage",
+      "type": "Combat"
+    }
+  ],
+  "helpSystem": {
+    "mechanics": {
+      "diceBonus": "half helpers rounded up",
+      "nudgeBonus": "half helpers rounded down",
+      "boonUsage": "All helpers can apply their boons to the roll",
+      "leadership": "One leader makes the roll"
+    }
+  },
+  "characteristics": {
+    "derivedStats": {
+      "health": {
+        "formula": "15 + (2 × Power) + Finesse + Mind + Heart",
+        "baseValue": 15
+      },
+      "willpower": {
+        "formula": "4 + Mind + Heart + Composure",
+        "baseValue": 4
+      },
+      "defence": {
+        "formula": "15 + (3 × Attribute) + (2 × Skill)",
+        "baseValue": 15
+      },
+      "boonLimit": {
+        "formula": "Level + 1"
+      }
+    }
+  },
+  "experienceCosts": {
+    "attribute": {
+      "formula": "New Level × 4",
+      "type": "Multiplicative"
+    },
+    "skill": {
+      "formula": "New Level × 2",
+      "type": "Multiplicative"
+    },
+    "feat": {
+      "cost": 4,
+      "type": "Fixed"
+    },
+    "attunement": {
+      "formula": "New Level × 2",
+      "type": "Multiplicative"
+    }
+  },
+  "rankSystem": {
+    "calculation": "Sum of all attributes + (1 for each level 3 skill)",
+    "thresholds": [
+      {
+        "value": 1,
+        "rank": 1
+      },
+      {
+        "value": 10,
+        "rank": 2
+      },
+      {
+        "value": 15,
+        "rank": 3
+      },
+      {
+        "value": 20,
+        "rank": 4
+      },
+      {
+        "value": 25,
+        "rank": 5
+      },
+      {
+        "value": 30,
+        "rank": 6
+      }
+    ],
+    "featRequirement": "Either related Attribute or character level must be >= feat level"
+  }
+}

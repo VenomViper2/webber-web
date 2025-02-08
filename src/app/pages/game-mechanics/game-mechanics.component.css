@@ -1,0 +1,43 @@
+/* game-mechanics.component.css */
+.mechanics-container {
+    padding: 1rem;
+}
+
+.actions-grid, .feats-grid, .stats-grid, .costs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.action-card, .feat-card, .stat-card, .cost-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.standard { border-left: 4px solid #3b82f6; }
+.reaction { border-left: 4px solid #10b981; }
+.combat { border-left: 4px solid #ef4444; }
+.utility { border-left: 4px solid #8b5cf6; }
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.formula, .base-value {
+    font-family: monospace;
+    background-color: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+}
