@@ -1,0 +1,1 @@
+import{Ia as n,Ja as a,Ra as p,Ta as s,U as o}from"./chunk-PLCQIX67.js";var i=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-about"]],standalone:!0,features:[s],decls:2,vars:0,template:function(e,r){e&1&&(n(0,"p"),p(1,"about works!"),a())}})};export{i as AboutComponent};

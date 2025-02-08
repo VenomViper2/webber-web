@@ -3,41 +3,798 @@
     {
       "id": "1",
       "name": "Gold Feats",
-      "description": "Basic description",
-      "fullDescription": "Full description of the feat",
+      "description": "Spend gold in lieu of light cost for any non-basic feat of any colour.",
+      "fullDescription": "Spend gold in lieu of light cost for any non-basic feat of any colour.",
       "images": [
-        "https://placehold.co/600x400",
-        "https://placehold.co/600x400"
+        "gold-light.jpg"
+      ],
+      "featList": [
+        {
+          "name": "Gold Light’s Blessing",
+          "description": "When you would spend light to activate any feat of light, you may spend Gold light in lieu of the normal light cost. This cannot be used for the Basic Feats of Light.",
+          "level": "Level 1",
+          "type": "Passive"
+        },
+        {
+          "name": "Beguiled",
+          "description": "Select a target who holds no hostility towards you, and isn’t in danger. Ask for a small favour, which would take them no more than 3 seconds, and does not directly contradict their interests. They will do it immediately, without even thinking, though they will be aware that they have done it.",
+          "level": "Level 2",
+          "type": "Instant"
+        },
+        {
+          "name": "First Impressions",
+          "description": "Can only be used after at least a half hour conversation or camaraderie with the target. The target now considers you a genuine friend. This effect is not permanent, and maintaining the friendship requires continued work.",
+          "level": "Level 2",
+          "type": "Instant"
+        },
+        {
+          "name": "When Suddenly",
+          "description": "If you haven’t otherwise been described in 10 minutes of real time, you can “walk into” any location that is currently being described, as long as you could feasibly have gotten there.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Charismatic Compass",
+          "description": "When looking at a group, immediately identify who the leader of the group is. If there is no leader, you identify who is the most trusted of the group.",
+          "level": "Level 2",
+          "type": "Instant"
+        },
+        {
+          "name": "Orator",
+          "description": "When standing amongst a crowd, immediately gain the attention of the crowd. You may make social tests against the whole crowd at once. In this case, you should take your test once, applying the one result to each member of the crowd separately.",
+          "level": "Level 2",
+          "type": "Instant"
+        },
+        {
+          "name": "Empath",
+          "description": "Identify exactly how a target is feeling at this moment, unless they spend a Gold Light.",
+          "level": "Level 3",
+          "type": "Instant"
+        },
+        {
+          "name": "Brewed Courage",
+          "description": "Any penalties applied to you through Poisons, Drugs or Alcohol are applied in reverse to any Heart test or social defence.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Chit-Chat",
+          "description": "Test Heart against a target’s social defence. If successful, you can keep them occupied with general chit chat for the next 5 minutes. If any distractions occur, you must test again to keep them occupied. Once the 5 minutes have run out, you may retest to extend the duration for another 5 minutes. The effect is broken if the target is aware of immediate danger.",
+          "level": "Level 3",
+          "type": "Extended"
+        },
+        {
+          "name": "Soothing Presence",
+          "description": "Use when Resting. Select a target who is resting with you and pick a colour of light, and gain no Light of that colour this rest. Each light you did not gain this way is awarded to the target instead.",
+          "level": "Level 3",
+          "type": "Extended"
+        },
+        {
+          "name": "Nightmare Presence",
+          "description": "After just a few minutes of conversation with a target, you’ve planted uncomfortable ideas in their head. On a successful Heart test against your social defence, they can identify what you’re doing, but it’s too late. Their next Rest will be three levels lower, to a minimum of Interrupted.",
+          "level": "Level 3",
+          "type": "Extended"
+        },
+        {
+          "name": "Animal Ken",
+          "description": "You can make Heart tests against animals. They resist using their Mind Defence.",
+          "level": "Level 3",
+          "type": "Passive"
+        },        {
+          "name": "Gather Rumours",
+          "description": "Spend an evening in a bar, helping with community projects, or going door to door, in any place with a large number of people. After a few hours, learn one useful or unusual thing about the local people or area.",
+          "level": "Level 3",
+          "type": "Extended"
+        },        {
+          "name": "From the Heart",
+          "description": "Make a single statement that is true to your current knowledge. Those who hear it know that you are telling the truth.",
+          "level": "Level 4",
+          "type": "Instant"
+        },        {
+          "name": "Goading",
+          "description": "Goad the target with a statement or action. The next attack the target makes within the next few minutes must be directed towards you. An unintelligent beast will either run or attack. For more intelligent beings, you must test your Heart against their Mind defence.",
+          "level": "Level 4",
+          "type": "Instant"
+        },        {
+          "name": "Effort Makes Luck",
+          "description": "Trigger during a skill test. You can convert any number of your boons into nudges for this test.",
+          "level": "Level 4",
+          "type": "Reflexive"
+        },        {
+          "name": "Warm Presence",
+          "description": "Either touch, or speak to a target. They roll one dice and then add it to their river as a boon.",
+          "level": "Level 4",
+          "type": "Instant"
+        },
+        {
+          "name": "Triggering Presence",
+          "description": "Cause tensions between groups or individuals to break by goading them. If they attempt to resist, test Heart against the target’s Mind Defence +2 defence for every target past the third. All of the targeted groups' defences are reduced by 2 during the ensuing conflict.",
+          "level": "Level 4",
+          "type": "Instant"
+        },
+        {
+          "name": "Galvanising Words",
+          "description": "Over a minute long speech or show of passion, energise a group of people into action over something that they have otherwise given up on, or not attempted. You cannot make people do something they don’t want to do, but you can convince them to take action on something that may already be in their best interests.",
+          "level": "Level 4",
+          "type": "Extended"
+        },
+        {
+          "name": "Gift of the Gab",
+          "description": "Supplement a social test when you are caught in an incriminating or bizarre situation. You suffer no penalties as a result of the situation you were caught in.",
+          "level": "Level 5",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Voice of Authority",
+          "description": "Give a quick command to a nearby target who does not treat you as hostile, then test Heart against their Heart defence. If you succeed, their next action will include completing the command you gave them, as they complete it before even thinking. This action can directly contradict their interests, though it cannot drive them to self harm. Cannot be used on the same target again in the same day.",
+          "level": "Level 5",
+          "type": "Instant"
+        },
+        {
+          "name": "Sweetest Dreams",
+          "description": "When using Soothing Presence, you can now pick any number of colours, and grant all of them to your target. If you do only pick one colour, you can select up to Heart targets, who all gain that colour.",
+          "level": "Level 5",
+          "type": "Passive"
+        },
+        {
+          "name": "Apparent Greatness",
+          "description": "You can hold yourself in a way to suggest your talents lie elsewhere. Pick any of your Attributes to exaggerate or act down. For one hour, anyone who looks at you perceives that act as though it is reality. Any person who has recently seen you before and after using this Feat is a little confused, and can test Heart against your Heart Defence to attempt to determine the reality of the situation.",
+          "level": "Level 5",
+          "type": "Extended"
+        },
+        {
+          "name": "Nihilistic Philosophy",
+          "description": "Make a statement and test Heart against the higher of a target’s Mind or Heart defence. If successful, deal Heart+3d4 Willpower damage.",
+          "level": "Level 5",
+          "type": "Instant"
+        },
+        {
+          "name": "Look at That!",
+          "description": "Test Heart against the higher of the target’s Mind or Heart defence. If you succeed, their defence is treated as 5 lower until the end of your next turn. A target can only suffer from the effects of one “Look at That!” at a time.",
+          "level": "Level 5",
+          "type": "Instant"
+        },
+        {
+          "name": "Apparent Greatness",
+          "description": "You can hold yourself in a way to suggest your talents lie elsewhere. Pick any of your Attributes to exaggerate or act down. For one hour, anyone who looks at you perceives that act as though it is reality. Any person who has recently seen you before and after using this Feat is a little confused, and can test Heart against your Heart Defence to attempt to determine the reality of the situation.",
+          "level": "Level 5",
+          "type": "Extended"
+        },
+        {
+          "name": "Lead the Lost",
+          "description": "Over a 5 minute discussion, give purpose and meaning to someone who has otherwise given up. They will treat that meaning as the very core of their new identity, and will gladly die for that purpose.",
+          "level": "Level 6",
+          "type": "Extended"
+        },
+        {
+          "name": "Between the Lines",
+          "description": "Hide meaning amongst another sentence or through subtle movements. Express up to 7 words to a target without anyone else understanding, or even knowing that meaning was sent. This can also be done by letter.",
+          "level": "Level 6",
+          "type": "Instant"
+        },
+        {
+          "name": "Brave Heart",
+          "description": "Can only be used if wearing no armour. Gain reduction equal to half your Heart, rounded up. This effect lasts a number of rounds equal to your heart, expiring at the beginning of your turn.",
+          "level": "Level 6",
+          "type": "Instant"
+        },
+        {
+          "name": "Sworn Oath",
+          "description": "Stand with the Target as they swear an Oath. They will uphold that Oath to their full ability, even if doing so would cause their death. Should completing the Oath become impossible, this effect is broken, and the target will suffer maximum willpower damage. The target must willingly swear the Oath for the effect to take place.",
+          "level": "Level 6",
+          "type": "Extended"
+        },
+        {
+          "name": "Inspirational Presence",
+          "description": "Roll a number of dice equal to your Heart. Those dice are placed into \"The second river\" as Boons. You may assign those Boons to any tests you observe, but did not personally roll the test for. You can only have one active \"second river\" at a time.",
+          "level": "Level 6",
+          "type": "Instant"
+        },
+        {
+          "name": "Little Tells",
+          "description": "Activate in response to a single statement made by another. You are immediately aware of whether they believe they are telling the truth.",
+          "level": "Level 6",
+          "type": "Reflexive"
+        }
       ]
     },
     {
       "id": "2",
-      "name": "red Feats",
+      "name": "Red Feats",
       "description": "Basic description",
-      "fullDescription": "  Full description of the feat",
+      "fullDescription": "Full description of the feat",
       "images": [
-        "https://placehold.co/600x400",
-        "https://placehold.co/600x400"
+        "red-light.jpg"
+      ],
+      "featList": [
+        {
+          "name": "Red Light's Blessing",
+          "description": "Supplement an attack. Add 1d4 to the damage of an attack. This can be used to supplement an attack that has already gone through.",
+          "level": "Level 1",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Sound Constitution",
+          "description": "Increase your maximum wounds by 5.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Heavy Strikes",
+          "description": "When calculating damage, your power is considered to be one higher.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Venom Resistance",
+          "description": "Reduce the severity of poisons affecting you by one rank.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Head Blow",
+          "description": "Supplement an attack. If it hits, the attack deals just 1 wound, but deals 2d4 willpower damage instead.",
+          "level": "Level 2",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Final Hurrah",
+          "description": "When your current health is 10 or less, reroll 1s on the damage rolls of attacks you make. Can only cause a dice to be re-rolled once.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Heavy Handed",
+          "description": "Your fists deal an additional 1d4 damage.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Ox-Body Technique",
+          "description": "Increase your maximum wounds by 5.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Cover",
+          "description": "Trigger when an attack targets another person within melee range. You take the attack on their behalf. You may not apply your defence, moving immediately to damage. (Because the attack is not rolled, it can never be critical.)",
+          "level": "Level 3",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Lesser Burdens",
+          "description": "Treat the total Size of your equipment as being 1 Size lower when calculating encumberment.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Untold Strength",
+          "description": "Your Power is treated as 2 higher for Force tests.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Blunt Master",
+          "description": "Supplement an attack using a weapon with the bashing tag. You can choose to ignore the bashing tag for the purposes of rolling damage.",
+          "level": "Level 3",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Heavy Sleeper",
+          "description": "During any rest, gain 2 additional Light of one colour of your choice.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Stamina",
+          "description": "Increase your maximum wounds by 5.",
+          "level": "Level 4",
+          "type": "Passive"
+        },
+        {
+          "name": "Bar Brawling",
+          "description": "When grabbing an improvised weapon, the weapon does not gain the improvised tag. You may select one appropriate weapon tag to give it instead.",
+          "level": "Level 4",
+          "type": "Passive",
+          "prerequisites": ["Blunt Master"]
+        },
+        {
+          "name": "Tower Defence",
+          "description": "Until your next turn, use your Power instead of your Finesse for determining your defence against attacks. If you have a weapon with the \"Shield\" tag, then you may use this feat Reflexively.",
+          "level": "Level 4",
+          "type": "Instant"
+        },
+        {
+          "name": "Disarm",
+          "description": "Supplement an attack. If the attack deals more damage than twice the target's Power + Finesse, then you may knock one thing they're holding to the ground. If you use a weapon with the bashing tag, then you only need to overcome the target's Power + Finesse with your damage.",
+          "level": "Level 4",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Wild Strike",
+          "description": "Supplement an attack. The target's defence is treated as being 4 higher for the purpose of this attack. If the attack hits, the attack deals 2d4 additional damage.",
+          "level": "Level 4",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Counterattack",
+          "description": "Trigger when you take damage from an attack. Immediately make an attack against the person who made that attack.",
+          "level": "Level 4",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Vigour",
+          "description": "Increase your maximum wounds by 5.",
+          "level": "Level 5",
+          "type": "Passive"
+        },
+        {
+          "name": "Frenzy",
+          "description": "After making an attack that reduces an enemy's health to 0 or below, you may trigger this feat. Make an additional attack against another target.",
+          "level": "Level 5",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Dazing Strike",
+          "description": "Supplement an attack. If it hits, the TNs of all of the target's actions are increased by 4 until the end of your next turn. If you used a weapon with the Bashing tag, they are increased by 6 instead.",
+          "level": "Level 5",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Two Weapon Fighting",
+          "description": "Supplement a melee attack made with one weapon, while you have a weapon in your other hand. If it deals any damage, you may make another attack immediately against the same target with a weapon held in your other hand. This can only be used on your first attack in a round.",
+          "level": "Level 5",
+          "type": "Supplemental"
+        },
+        {
+          "name": "All Out Attack",
+          "description": "Supplement an attack. Roll a d10. Add the result as a flat bonus to your attack roll, but remove its number from your defence until the next round. (A 0 adds 10 to your attack, and removes 10 from your defence.)",
+          "level": "Level 5",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Stubborn Sleeper",
+          "description": "During any rest, roll three dice. You may add one to your river as a boon.",
+          "level": "Level 5",
+          "type": "Passive",
+          "prerequisites": ["Heavy Sleeper"]
+        },
+        {
+          "name": "Gaia's Blessing",
+          "description": "Increase your maximum wounds by 5.",
+          "level": "Level 6",
+          "type": "Passive"
+        },
+        {
+          "name": "Growing Momentum",
+          "description": "After any time you successfully damage a target with an attack, increase the damage of your weapon by 1d4. This effect stacks until you select an action other than an attack, miss an attack, or the combat ends.",
+          "level": "Level 6",
+          "type": "Passive"
+        },
+        {
+          "name": "Sweeping Attack",
+          "description": "Test your power against the defence of any number of targets within melee range, giving each of them a bonus to their defence equal to twice the number of targets. Each target who's defence is overcome takes damage as if they were hit by your melee weapon. If you do not have one equipped, then they take damage as if they were hit by your fists.",
+          "level": "Level 6",
+          "type": "Instant"
+        },
+        {
+          "name": "Twin Weapon Strike",
+          "description": "Supplement a melee attack made with one weapon, while you have a weapon in your other hand. If the attack hits, you may add the damage of your other weapon to that attack, as though it had also hit at the same time. (This includes adding your Power again, and adding all of that weapon's damage dice.)",
+          "level": "Level 6",
+          "type": "Supplemental",
+          "prerequisites": ["Two Weapon Fighting"]
+        },
+        {
+          "name": "Strength of Body",
+          "description": "This Feat can only be activated during combat. Heal Power + d6 wounds.",
+          "level": "Level 6",
+          "type": "Instant"
+        },
+        {
+          "name": "Aggravated Counter",
+          "description": "When you activate counterattack, if you successfully hit the target, add the amount of damage you took as additional damage. This is applied after other damage adjusting effects, such as critical hits. In addition, you may now use Counterattack in response to an attack that did not successfully damage you. (That Counterattack would deal no extra damage, as you took no damage from their attack.)",
+          "level": "Level 6",
+          "type": "Passive",
+          "prerequisites": ["Counterattack"]
+        }
       ]
     },
     {
       "id": "3",
       "name": "Blue Feats",
       "description": "Basic description",
-      "fullDescription": "  Full description of the feat",
+      "fullDescription": "Full description of the feat",
       "images": [
-        "https://placehold.co/600x400",
-        "https://placehold.co/600x400"
+        "blue-light.jpg"
+      ],
+      "featList": [
+        {
+          "name": "Blue Light's Blessing",
+          "description": "Re-roll up to 3 dice that you have just rolled, after any skill based re-roll's, but before any swaps with your river, and any nudges. You must take the re-rolled value.",
+          "level": "Level 1",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Fast Worker",
+          "description": "When making extended tests, if you are applying one of your Skills, half the period of time between each roll.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Rule of Thumb",
+          "description": "Gain access to a new Instant Action. Evaluate Difficulty allows you to Test Study vs the TN of an action to determine what the TN is.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Weapons Crafting",
+          "description": "Craft basic weapons with up to one tag. The test is treated as an Extended Test, requiring 6 hours per period. The Progress TN is 16 + 2x The Size of the Weapon + 3x The Number of Tags. The Completion TN is 45 + 5x the Size of the Weapon + 10x The Number of Tags. Using this ability requires the expenditure of a Blue Light to begin, and requires an amount of materials equal in size to the Weapon being Crafted. On a failed attempt, one portion of material is lost.",
+          "level": "Level 2",
+          "type": "Extended"
+        },
+        {
+          "name": "Bestiary Knowledge",
+          "description": "Test Bestiology against TN 16 + 2x the Target Beast's Level. On a success, you gain your choice of one of the following pieces of information. Current Health. Current Willpower. Next Intended Action. Target of Next Intended Action. Niche knowledge about the Beast's abilities.",
+          "level": "Level 2",
+          "type": "Instant"
+        },
+        {
+          "name": "Symptom Treatment",
+          "description": "Requires an hour of treating a poisoned target, and access to basic amenities. Simple things like hot water, towels, or a few kinds of plants with which to make herbal remedies. Test Mind against the poison's Potency. If successful, reduce the Severity of the poison by one. If this reduces severity to 0, the effect is ended.",
+          "level": "Level 2",
+          "type": "Extended"
+        },
+        {
+          "name": "Light Sleeper",
+          "description": "You suffer no penalties for testing awareness while asleep, and can utilise your Awareness skill as though you were awake.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Logical Mindset",
+          "description": "Use Mind instead of Heart to defend against a Social Test. Must be declared before the incoming Social Test is rolled.",
+          "level": "Level 3",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Filtration",
+          "description": "Reduce a poison's potency by 1d4, and then spend 4 hours making a Synthesis test (described in the rules for Poisons). If successful, you may either add or remove a tag from the poison, or increase or decrease the poison's speed by one level.",
+          "level": "Level 3",
+          "type": "Extended"
+        },
+        {
+          "name": "Mental Edge",
+          "description": "Once per day, you may use a Blue Feat of Light without spending a Blue Light.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Extended Medical Care",
+          "description": "Use on a wounded target. Spend 15 minutes per day with the target applying bandages or remedies. Whenever that target uses Green Light's Blessing, they heal an additional Mind wounds. Expires when the Target goes a full day without your aid. You can have a number of patients equal to your Mind, but each requires a separate use of this ability.",
+          "level": "Level 3",
+          "type": "Extended"
+        },
+        {
+          "name": "Defensive Crafts",
+          "description": "Craft basic armour, but may not apply any tags. The test is treated as an Extended Test, requiring 6 hours per period. The Progress TN is 16 + 2x The Size of the Armour + 3x The Number of Tags. The Completion TN is 45 + 5x the Size of the Armour + 10x The Number of Tags. Using this ability requires the expenditure of a Blue Light to begin, and requires an amount of materials equal in size to the Armour being Crafted. On a failed attempt, one portion of material is lost.",
+          "level": "Level 3",
+          "type": "Extended"
+        },
+        {
+          "name": "Strategist",
+          "description": "Trigger at the moment when combat starts, before everyone has rolled initiative. Pick a number of targets up to your Mind. Each of them adds your Mind as a flat bonus to the result of their initiative test.",
+          "level": "Level 3",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Careful Shot",
+          "description": "Supplement a Preparation Action. Use your Mind to test against the Preparation, rather than your Finesse.",
+          "level": "Level 4",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Advanced Planning",
+          "description": "Test Study against the TN of an action. If you succeed, gain once extra dice for your next test against the action. The GM may rule that it lasts a number of tests equal to your Mind, if the subject is unchanging.",
+          "level": "Level 4",
+          "type": "Instant"
+        },
+        {
+          "name": "Always Ahead",
+          "description": "Roll 2 dice. Pick one and add that dice to your river as a Boon.",
+          "level": "Level 4",
+          "type": "Instant"
+        },
+        {
+          "name": "Distillation",
+          "description": "Reduce a poison's potency by 1d4, and then spend 4 hours making a Synthesis test (described in the rules for Poisons). If successful, increase the poison's Severity by 1.",
+          "level": "Level 4",
+          "type": "Extended"
+        },
+        {
+          "name": "Watchful Eye",
+          "description": "Select a target. If they are resisting then you must test Mind against their Heart Defence. If you succeed, name one Attribute and one Skill. You immediately identify the level of that Attribute and that Skill.",
+          "level": "Level 4",
+          "type": "Instant"
+        },
+        {
+          "name": "Adept Craftsman",
+          "description": "You may now apply one additional tag when crafting. This means you are limited to two tags when crafting a weapon, or 1 tag when crafting armour. (This feat does not give you the ability to craft armour if you do not have Defensive Crafts.)",
+          "level": "Level 4",
+          "type": "Passive",
+          "prerequisites": ["Weapons Crafting"]
+        },
+        {
+          "name": "Immediate First Aid",
+          "description": "Spend 5 minutes evaluating a wounded target, applying bandages or remedies. Test Mind against a TN of 20 + their current wounds. If successful, the target heals your Mind + d4 Wounds. This ability can only be attempted once per target per day.",
+          "level": "Level 5",
+          "type": "Extended"
+        },
+        {
+          "name": "Read the Opponent",
+          "description": "Use Mind instead of Finesse to defend against an incoming Attack. Must be declared before the incoming attack is rolled.",
+          "level": "Level 5",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Power of Deduction",
+          "description": "While looking over an object, test Mind against a TN of 30. If successful, you may ask any one question that might feasibly be answered by investigating the item. For example, wear and tear might show how regularly it was used, or material might show where it was made. This question will be answered truthfully by the GM.",
+          "level": "Level 5",
+          "type": "Instant"
+        },
+        {
+          "name": "Suspension",
+          "description": "Reduce a poison's potency by 1d4, and then spend 4 hours making a Synthesis test (described in the rules for Poisons). As part of this test, you must destroy another poison. If successful, select one of the symptoms of the destroyed poison, and add it to the targeted poison.",
+          "level": "Level 5",
+          "type": "Extended"
+        },
+        {
+          "name": "Azure Investigation",
+          "description": "Select a target. If they are resisting then you must test Mind against their Heart Defence. If you succeed, you immediately identify the target's current Wounds, current Willpower, the last time they ate, and the level of their last rest.",
+          "level": "Level 5",
+          "type": "Instant"
+        },
+        {
+          "name": "Master Strategist",
+          "description": "Any time a target benefits from one of your use of Strategist, they may also add your Mind as dice to their initiative test.",
+          "level": "Level 5",
+          "type": "Passive"
+        },
+        {
+          "name": "Continual Introspection",
+          "description": "Gain two bonus dice for any tests to overcome a specific challenge that you have experienced before, at least one week ago. The previous challenge must be extremely similar to the current one in order to gain the bonus dice. For example, making an attack against a beast will only award the extra dice if you have previously fought a beast of that species of a similar size. A travel test will only award the bonus dice for traversing the same area, in a similar season. (Any being with a Soul attribute is unique, requiring an individual use of this ability).",
+          "level": "Level 6",
+          "type": "Passive"
+        },
+        {
+          "name": "Calculated Strike",
+          "description": "Supplement an Attack Action with a Melee Weapon. Use your Mind for the attack, in place of your Power.",
+          "level": "Level 6",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Infusion",
+          "description": "Reduce the Severity or Duration of a Poison by one stage, and destroy another Poison you own, then test Toxicology against its Potency. Requires at least 3 hours of work. If successful, add a tag or effect from the destroyed poison to the poison being worked on.",
+          "level": "Level 6",
+          "type": "Extended"
+        },
+        {
+          "name": "Refinement",
+          "description": "Spend 4 hours making a Synthesis test (described in the rules for Poisons). If successful, add 1d4 potency to the poison. For every 10 by which you surpassed the TN, you may spend 2 additional hours to add a further 1d10 to the poison's potency. Refinement can only be attempted once on a given poison.",
+          "level": "Level 6",
+          "type": "Extended"
+        },
+        {
+          "name": "Well Versed",
+          "description": "When using Blue Light's Blessing, you may opt not to re-roll any dice. If you do, you may instead nudge one dice.",
+          "level": "Level 6",
+          "type": "Passive"
+        },
+        {
+          "name": "Master Craftsman",
+          "description": "You may apply any number of tags when crafting Weapons or Armour. (This feat does not give you the ability to craft armour if you do not have Defensive Crafts.)",
+          "level": "Level 6",
+          "type": "Passive"
+        }
       ]
     },
     {
       "id": "4",
       "name": "Green Feats",
       "description": "Basic description",
-      "fullDescription": "  Full description of the feat",
+      "fullDescription": "Full description of the feat",
       "images": [
-        "https://placehold.co/600x400",
-        "https://placehold.co/600x400"
+        "green-light.jpg"
+      ],
+      "featList": [
+        {
+          "name": "Green Light's Blessing",
+          "description": "Recover Finesse + d6 wounds. Can be used while asleep. If used in your sleep, roll 2d6 and use the highest.",
+          "level": "Level 1",
+          "type": "Instant"
+        },
+        {
+          "name": "Fast Reflexes",
+          "description": "Add twice your Finesse to your initiative in combat.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Fastest Strike",
+          "description": "Your first attack of a combat gains 2 dice. If it is also the first attack of the combat, then the attack gains another 2 dice for a total of 4.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Quick Healer",
+          "description": "Each time you rest, recover a number of wounds equal to your Finesse.",
+          "level": "Level 2",
+          "type": "Passive"
+        },
+        {
+          "name": "Silent Step",
+          "description": "Supplement a stealth test. Add a dice to your test. You do not need to retest for stealth during movement, or while making any actions that are not innately obvious.",
+          "level": "Level 2",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Defend Other",
+          "description": "Select a target. Their defence TN is increased by 5, and yours is reduced by 5.",
+          "level": "Level 2",
+          "type": "Instant"
+        },
+        {
+          "name": "Surprise Attack",
+          "description": "Supplement an attack against a target who doesn't know where you are. Treat their defence as being 4 lower for the attack, and gain two additional damage dice if the attack hits.",
+          "level": "Level 2",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Defensive Strike",
+          "description": "Supplement an attack. Roll one less dice, but increase your defence by 3 until your next turn.",
+          "level": "Level 3",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Sleight of Hand",
+          "description": "Select two locations within arms reach which you can see and quickly access. Move one item that could fit in the palm of your hand from one location to the other. Simultaneously, you may move a different item from the second location to the first.",
+          "level": "Level 3",
+          "type": "Instant"
+        },
+        {
+          "name": "Quick Draw",
+          "description": "Reflexively swap one weapon to another one within your reach. Or, add one turn to the number of turns you have been equipping, or unequipping armour.",
+          "level": "Level 3",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Untold Finesse",
+          "description": "You can use your Finesse in place of your Power for actions that would usually require Athletics.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Ever Prepared",
+          "description": "Treat the size of any ranged weapon as one less for the purposes of making preparation rolls.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Default Defence",
+          "description": "In any turn in which you only make one of the following actions, gain 2 defence until your next turn. Defend, Equip, Study Enemy, Take Stock, Preparation, Monologue.",
+          "level": "Level 3",
+          "type": "Passive"
+        },
+        {
+          "name": "Piercing Attack",
+          "description": "Supplement an attack with a weapon that has the Piercing tag. If it hits, it ignores all of the target's resistance due to armour.",
+          "level": "Level 4",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Knitting Flesh",
+          "description": "You can now use Green Light's Blessing reflexively.",
+          "level": "Level 4",
+          "type": "Passive"
+        },
+        {
+          "name": "Healing Might",
+          "description": "When using Green Light's Blessing, always roll 2d6 and pick the higher. If used in your sleep, and neither dice show a 4 or higher, treat the result as a 4.",
+          "level": "Level 4",
+          "type": "Passive"
+        },
+        {
+          "name": "Dodge",
+          "description": "You can use dodge after you have been successfully hit by an attack, but before damage has been rolled. Make a defence test, using the attack as a TN. If successful, that attack does half of its damage, rounded down.",
+          "level": "Level 4",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Ranged Master",
+          "description": "Supplement a Preparation Action. If the preparation is successful, you may immediately make your attack, including the bonus dice for passing the Preparation test.",
+          "level": "Level 4",
+          "type": "Supplemental"
+        },
+        {
+          "name": "Celerity",
+          "description": "Each round, at the beginning of your turn, increase your initiative by 2. If you are not the person with the highest initiative, then increase your initiative by 5 that round instead. Ends when the combat finishes.",
+          "level": "Level 4",
+          "type": "Extended"
+        },
+        {
+          "name": "Deflect & Counter",
+          "description": "Trigger only after successfully defending an attack. Immediately make an attack roll back on the enemy that made the attack against you. This can only be used once per round. (An attack is successfully defended if you take no damage from the attack.)",
+          "level": "Level 5",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Assassin's Strike",
+          "description": "Cannot be used during any combat. Target a person who's guard is completely down, and make an attack against their usual TN. If your attack is successful, apply your damage as though every damage dice rolled a 4. The GM has the final say over whether the target would have been guarded.",
+          "level": "Level 5",
+          "type": "Instant"
+        },
+        {
+          "name": "Instant Reaction",
+          "description": "Trigger after making an initiative test. Roll the test again. Take the higher of both results. (Any resources spent for the unused test are not regained.)",
+          "level": "Level 5",
+          "type": "Reflexive",
+          "prerequisites": ["Fast Reflexes"]
+        },
+        {
+          "name": "Assassin's Shroud",
+          "description": "Supplement a stealth test. You may enter stealth during combat as long as you have not been targeted for any attacks or abilities since your last turn.",
+          "level": "Level 5",
+          "type": "Supplemental",
+          "prerequisites": ["Silent Step"]
+        },
+        {
+          "name": "Flexing Strike",
+          "description": "After an attack you make failed to hit a target, the target takes your Finesse as damage.",
+          "level": "Level 5",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Defend Others",
+          "description": "Effects all allies within melee range. Their defence TN is increased by 5, and yours is reduced by 10.",
+          "level": "Level 5",
+          "type": "Instant",
+          "prerequisites": ["Defend Other"]
+        },
+        {
+          "name": "Inertia",
+          "description": "Use the higher of your Finesse or your Power for determining your equipment capacity.",
+          "level": "Level 6",
+          "type": "Passive"
+        },
+        {
+          "name": "Sniping Shot",
+          "description": "Declare a small location to overwatch with a ranged weapon. Make a preparation action each turn, stacking all of the benefits on a single attack on a target in the declared area. These benefits can stack a number of times up to your Finesse. Ends if you make any action that is not Preparation, or if you change the area you're overwatching. Failing a preparation roll does not cause the benefits to reset, nor does it cause Sniping Shot to end.",
+          "level": "Level 6",
+          "type": "Extended"
+        },
+        {
+          "name": "Riposte",
+          "description": "After successfully hitting a target with a melee attack, the target takes your Finesse as additional damage.",
+          "level": "Level 6",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Perfect Critical",
+          "description": "Can be activated if you make an attack that surpasses the target's defence by 15 or more. Add 2d4 to your damage dealt. (These dice are added before any doubling caused by a normal Critical Hit.)",
+          "level": "Level 6",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Fastest in the Universe",
+          "description": "Activate at the end of one of your turns. Reduce your initiative by 15. This cannot be used if you have less than 20 initiative. (Reducing your initiative means that you can take another turn in the same round when the initiative tracker reaches your new initiative.)",
+          "level": "Level 6",
+          "type": "Reflexive"
+        },
+        {
+          "name": "Finding a Rhythm",
+          "description": "During combat, if you are repeating the same action as you made in your previous turn, including the same targets and Feats of light, add your Finesse as dice to any tests made as part of that action.",
+          "level": "Level 6",
+          "type": "Passive"
+        }
       ]
     }
   ]
