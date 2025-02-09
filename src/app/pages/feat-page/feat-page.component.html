@@ -6,6 +6,7 @@
             <p class="description">{{ feat.fullDescription }}</p>
         </div>
     </div>
+ <div class="app-container">
     @for (feature of feat.featList; track feature) {
         <div class="feat-item">
             <h3>{{ feature.name }}</h3>
@@ -13,6 +14,7 @@
             <p>{{ feature.description }}</p>
         </div>
     }
+    </div>
 } @else {
     <div>Feat not found</div>
 }

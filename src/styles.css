@@ -17,6 +17,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+p {
+    font-size: 1.2rem;
+    color: #4b5563;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
 img, picture, svg {
     max-width: 100%;
     display: block;
@@ -53,10 +62,6 @@ h2 {
 
 h3 {
     font-size: clamp(1.25rem, 2vw, 1.75rem);
-}
-
-p {
-    margin-bottom: 1rem;
 }
 
 /* Basic spacing utilities */
@@ -99,7 +104,23 @@ grid {
     gap: 1rem;
 }
 
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 30px;
+    background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+}
 
+@media (max-width: 768px) {
+    .app-container {
+        padding: 20px;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -111,4 +132,6 @@ grid {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
+
 }

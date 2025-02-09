@@ -1,9 +1,3 @@
-.mechanics-container {
-    min-height: 100vh;
-    padding: 2rem;
-    background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
-}
-
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -70,9 +64,6 @@ code {
         grid-template-columns: 1fr;
     }
 
-    .mechanics-container {
-        padding: 1rem;
-    }
 
     h2 {
         font-size: 1.5rem;
