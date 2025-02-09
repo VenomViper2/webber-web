@@ -1,19 +1,20 @@
 /* Container for the list of feats */
 .feat-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    padding: 16px;
-    background-color: #f4f4f9; /* Light background for contrast */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 24px;
+    background: linear-gradient(to bottom, #f9fafb, #eef1f6); /* Soft gradient for modern look */
+    border-radius: 12px;
 }
 
 /* Individual feat card styling */
 .feat-card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-left: 4px solid #3b82f6; /* Adds a color accent */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,62 +23,74 @@
 
 /* Add hover effect to cards */
 .feat-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* feat title styling */
+/* Feat title styling */
 .feat-name {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    margin: 0 0 8px;
-    color: #333333;
+    color: #1f2937;
+    margin-bottom: 10px;
 }
 
-/* feat description styling */
+/* Feat description styling */
 .feat-description {
     font-size: 1rem;
-    color: #666666;
-    margin-bottom: 8px;
+    color: #4b5563;
+    margin-bottom: 12px;
 }
 
-/* List of features styling */
+/* List of feat features */
 .feat-features {
     padding-left: 20px;
-    margin: 8px 0;
+    margin: 12px 0;
     list-style-type: disc;
-    color: #444444;
+    color: #374151;
 }
 
 .feat-features li {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-size: 0.95rem;
 }
 
 /* Full description styling */
 .feat-full-description {
     font-size: 0.9rem;
-    color: #888888;
-    margin-bottom: 8px;
+    color: #6b7280;
+    margin-bottom: 10px;
 }
 
-/* feat ID styling */
+/* Feat ID styling */
 .feat-id {
     font-size: 0.8rem;
-    color: #999999;
-    margin-bottom: 8px;
+    color: #9ca3af;
+    font-style: italic;
 }
 
 /* Link styling */
 .feat-link {
     font-size: 1rem;
-    color: #007bff;
+    font-weight: 500;
+    color: #2563eb;
     text-decoration: none;
     align-self: flex-start;
-    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .feat-link:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: #1d4ed8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .feat-list {
+        padding: 16px;
+    }
+
+    .feat-card {
+        padding: 16px;
+    }
 }

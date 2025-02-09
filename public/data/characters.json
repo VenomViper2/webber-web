@@ -1,0 +1,10 @@
+{
+  "characters": [
+    {
+      "name": "Jerik Fingerhands",
+      "description": "The Winter Barbarian",
+      "health": "Standard",
+      "cost": 1
+    }
+  ]
+}

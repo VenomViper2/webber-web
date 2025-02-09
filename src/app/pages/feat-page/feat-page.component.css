@@ -1,58 +1,94 @@
 .app-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 24px;
+    padding: 30px;
+    background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
 }
 
 .feat-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
     text-align: center;
+    gap: 12px;
 }
 
 .feat-image {
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feat-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .description {
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #4b5563;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-top: 12px;
 }
 
 .feat-item {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 15px;
-    border: 1px solid #ccc;
+    gap: 12px;
+    padding: 18px;
     border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3b82f6;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 10px;
+}
+
+.feat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
 }
 
 .feat-item h3 {
-    font-size: 1.5em;
-    color: #444;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
 }
 
 .feat-item p {
-    font-size: 1em;
-    color: #666;
+    font-size: 1rem;
+    color: #4b5563;
 }
 
 .type-span {
-    margin-left: 10px;
+    margin-left: 12px;
     display: inline-block;
     font-weight: bold;
-    color: #888;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 20px;
+    }
+
+    .feat-image {
+        max-width: 70%;
+    }
+
+    .feat-item {
+        padding: 15px;
+    }
 }

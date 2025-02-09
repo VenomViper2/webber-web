@@ -1,60 +1,94 @@
-<div class="mechanics-container">
+<!-- game-mechanics.component.html -->
+<div class="mechanics-container bg-gray-50 p-6">
     @if (viewModel$ | async; as vm) {
-        <section class="combat-section">
-            <h2>Combat Actions</h2>
-            <div class="actions-grid">
+        <section class="mechanics-section mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Combat Actions</h2>
+            <div class="grid-layout">
                 @for (action of vm.combatActions; track action.name) {
-                    <div class="action-card" [ngClass]="action.type.toLowerCase()">
-                        <h3>{{ action.name }}</h3>
-                        <div class="action-type">{{ action.type }}</div>
-                        <p>{{ action.description }}</p>
+                    <div class="card" [ngClass]="[
+                        'border-l-4',
+                        action.type.toLowerCase() === 'standard' ? 'border-blue-500' :
+                        action.type.toLowerCase() === 'reaction' ? 'border-green-500' :
+                        action.type.toLowerCase() === 'combat' ? 'border-red-500' :
+                        'border-purple-500'
+                    ]">
+                        <h3 class="text-xl font-semibold mb-2">{{ action.name }}</h3>
+                        <div class="type-badge" [ngClass]="[
+                            action.type.toLowerCase() === 'standard' ? 'bg-blue-100 text-blue-800' :
+                            action.type.toLowerCase() === 'reaction' ? 'bg-green-100 text-green-800' :
+                            action.type.toLowerCase() === 'combat' ? 'bg-red-100 text-red-800' :
+                            'bg-purple-100 text-purple-800'
+                        ]">
+                            {{ action.type }}
+                        </div>
+                        <p class="text-gray-600 my-3">{{ action.description }}</p>
                         @if (action.cost) {
-                            <div class="cost">Cost: {{ action.cost }}</div>
+                            <div class="info-tag">Cost: {{ action.cost }}</div>
                         }
                         @if (action.refresh) {
-                            <div class="refresh">Refresh: {{ action.refresh }}</div>
+                            <div class="info-tag">Refresh: {{ action.refresh }}</div>
                         }
                     </div>
                 }
             </div>
         </section>
 
-        <section class="feats-section">
-            <h2>Basic Feats</h2>
-            <div class="feats-grid">
+        <section class="mechanics-section mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Basic Feats</h2>
+            <div class="grid-layout">
                 @for (feat of vm.basicFeats; track feat.name) {
-                    <div class="feat-card" [ngClass]="feat.type.toLowerCase()">
-                        <h3>{{ feat.name }}</h3>
-                        <div class="feat-type">{{ feat.type }}</div>
-                        <p>{{ feat.effect }}</p>
+                    <div class="card" [ngClass]="[
+                        'border-l-4',
+                        feat.type.toLowerCase() === 'passive' ? 'border-blue-500' : 'border-green-500'
+                    ]">
+                        <h3 class="text-xl font-semibold mb-2">{{ feat.name }}</h3>
+                        <div class="type-badge" [ngClass]="[
+                            feat.type.toLowerCase() === 'passive' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
+                        ]">
+                            {{ feat.type }}
+                        </div>
+                        <p class="text-gray-600 my-3">{{ feat.effect }}</p>
                     </div>
                 }
             </div>
         </section>
 
-        <section class="characteristics-section">
-            <h2>Derived Stats</h2>
-            <div class="stats-grid">
+        <section class="mechanics-section mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Rank System</h2>
+            <p class="text-gray-600 mb-4">{{vm.rankSystem.calculation}}</p>
+            <div class="grid-layout">
+                @for (rank of vm.rankSystem.thresholds; track rank.rank) {
+                    <div class="card bg-gradient-to-br from-gray-50 to-gray-100">
+                        <h3 class="text-xl font-semibold mb-2">Level: {{ rank.rank }}</h3>
+                        <div class="text-gray-700">Total Sum: {{ rank.value }}</div>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="mechanics-section mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Derived Stats</h2>
+            <div class="grid-layout">
                 @for (stat of getStatsEntries(vm.characteristics.derivedStats); track stat.name) {
-                    <div class="stat-card">
-                        <h3>{{ stat.name }}</h3>
-                        <p class="formula">{{ stat.formula }}</p>
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-2">{{ stat.name | titlecase}}</h3>
+                        <code class="block bg-gray-100 p-2 rounded text-sm">{{ stat.formula }}</code>
                     </div>
                 }
             </div>
         </section>
 
-        <section class="experience-section">
-            <h2>Experience Costs</h2>
-            <div class="costs-grid">
+        <section class="mechanics-section">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Experience Costs</h2>
+            <div class="grid-layout">
                 @for (cost of getExperienceCostEntries(vm.experienceCosts); track cost.type) {
-                    <div class="cost-card">
-                        <h3>{{ cost.type }}</h3>
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-2">{{ cost.type | titlecase}}</h3>
                         @if (cost.formula) {
-                            <p>Formula: {{ cost.formula }}</p>
+                            <p class="text-gray-600">Formula: <code class="bg-gray-100 px-2 py-1 rounded">{{ cost.formula }}</code></p>
                         }
                         @if (cost.cost !== undefined) {
-                            <p>Fixed Cost: {{ cost.cost }}</p>
+                            <p class="text-gray-600">Fixed Cost: <span class="font-medium">{{ cost.cost }}</span></p>
                         }
                     </div>
                 }

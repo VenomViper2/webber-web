@@ -1,7 +1,7 @@
 // game-mechanics.component.ts
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AsyncPipe, NgClass, NgForOf, NgIf } from '@angular/common';
+import { AsyncPipe, NgClass, NgForOf, NgIf, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { combineLatest, map, Observable, Subject } from 'rxjs';
 import { shareReplay, takeUntil } from 'rxjs/operators';
 import { GameMechanicsService } from "../../service/game-mechanics.service";
@@ -25,7 +25,7 @@ interface ViewModelState {
 @Component({
   selector: 'app-game-mechanics',
   standalone: true,
-  imports: [AsyncPipe, NgForOf, NgIf, NgClass],
+  imports: [AsyncPipe, NgForOf, NgIf, NgClass, UpperCasePipe, TitleCasePipe],
   templateUrl: './game-mechanics.component.html',
   styleUrl: './game-mechanics.component.css'
 })
@@ -41,7 +41,7 @@ export class GameMechanicsComponent implements OnDestroy {
     return combineLatest({
       mechanics: this.gameMechanicsService.getAllMechanics(),
       combatActions: this.gameMechanicsService.getCombatActions(),
-      basicFeats: this.gameMechanicsService.getBasicFeats()
+      basicFeats: this.gameMechanicsService.getBasicFeats(),
     }).pipe(
             map(({ mechanics, combatActions, basicFeats }) => ({
               combatActions,
