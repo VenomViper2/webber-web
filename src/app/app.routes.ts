@@ -7,21 +7,10 @@ export const routes: Routes = [
         title: 'Home'
     },
     {
-        path: 'about',
-        loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
-        title: 'About'
-    },
-    {
-        path: 'contact',
-        loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent),
-        title: 'Contact'
-    },
-    {
         path: 'mechanics',
         loadComponent: () => import('./pages/game-mechanics/game-mechanics.component').then(m => m.GameMechanicsComponent),
         title: 'Game Mechanics'
     },
-
     {
         path: 'feat-list',
         children: [
