@@ -44,7 +44,7 @@ export interface ExperienceCosts {
 
 export interface RankThreshold {
     value: number;
-    rank: number;
+    rank: string;
 }
 
 export interface RankSystem {

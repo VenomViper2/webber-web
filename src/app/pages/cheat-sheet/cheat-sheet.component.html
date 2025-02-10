@@ -1,72 +1,54 @@
-<div class="app-container bg-gray-50 p-6">
+<div class="app-container">
     <h1 class="title center">{{ title }}</h1>
     @if (viewModel$ | async; as vm) {
-        <section class="mechanics-section mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Combat Actions</h2>
+        <section>
+            <h2>Combat Actions</h2>
             <div class="grid-layout">
                 @for (action of vm.combatActions; track action.name) {
-                    <div class="card">
-                        <h3 class="font-semibold mb-2 name">{{ action.name }}<span class="badge-span">{{ action.type }}</span></h3>
-
-                        <p class="description">{{ action.description }}</p>
-                        @if (action.refresh) {
-                            <div class="info-tag">Refresh: {{ action.refresh }}</div>
-                        }
-                    </div>
+                    <app-card [name]="action.name" [badge]="action.type" [description]="action.description"></app-card>
                 }
             </div>
         </section>
 
-        <section class="mechanics-section mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Basic Feats</h2>
+        <section>
+            <h2>Basic Feats</h2>
             <div class="grid-layout">
                 @for (feat of vm.basicFeats; track feat.name) {
-                    <div class="card">
-                        <h3 class="name mb-1">{{ feat.name }}<span class="badge-span">{{ feat.type }}</span></h3>
-                        <p class="description">{{ feat.effect }}</p>
-                    </div>
+                    <app-card [name]="feat.name" [badge]="feat.type" [description]="feat.effect"></app-card>
                 }
             </div>
         </section>
 
-        <section class="mechanics-section mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Rank System</h2>
+        <section>
+            <h2>Rank System</h2>
             <p>{{vm.rankSystem.calculation}}</p>
             <div class="grid-layout">
                 @for (rank of vm.rankSystem.thresholds; track rank.rank) {
-                    <div class="card bg-gradient-to-br from-gray-50 to-gray-100">
-                        <h3 class="name">Level: {{ rank.rank }}</h3>
-                        <div class="description">Total Sum: {{ rank.value }}</div>
-                    </div>
+                    <app-card [name]="rank.rank" [description]="rank.value.toString()"></app-card>
+
                 }
             </div>
         </section>
 
-        <section class="mechanics-section mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Derived Stats</h2>
+        <section>
+            <h2>Derived Stats</h2>
             <div class="grid-layout">
                 @for (stat of getStatsEntries(vm.characteristics.derivedStats); track stat.name) {
-                    <div class="card">
-                        <h3 class="name">{{ stat.name | titlecase}}</h3>
-                        <code class="description">{{ stat.formula }}</code>
-                    </div>
+                    <app-card [name]="stat.name | titlecase" [description]="stat.formula"></app-card>
                 }
             </div>
         </section>
 
-        <section class="mechanics-section">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Experience Costs</h2>
+        <section>
+            <h2>Experience Costs</h2>
             <div class="grid-layout">
                 @for (cost of getExperienceCostEntries(vm.experienceCosts); track cost.type) {
-                    <div class="card">
-                        <h3 class="name">{{ cost.type | titlecase}}</h3>
                         @if (cost.formula) {
-                            <p class="description">Formula: <code class="bg-gray-100 px-2 py-1 rounded">{{ cost.formula }}</code></p>
+                            <app-card [name]="cost.type | titlecase" [description]="cost.formula"></app-card>
                         }
                         @if (cost.cost !== undefined) {
-                            <p class="description">Fixed Cost: <span class="font-medium">{{ cost.cost }}</span></p>
+                            <app-card [name]="cost.type | titlecase" [description]="'Fixed Cost: ' + cost.cost.toString()"></app-card>
                         }
-                    </div>
                 }
             </div>
         </section>

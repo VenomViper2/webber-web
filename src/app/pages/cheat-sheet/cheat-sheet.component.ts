@@ -13,6 +13,7 @@ import {
   ExperienceCosts,
   RankSystem
 } from "../../model/CheetSheet";
+import { CardComponent } from "../../component/card/card.component";
 
 interface ViewModelState {
   combatActions: CombatAction[];
@@ -25,7 +26,7 @@ interface ViewModelState {
 @Component({
   selector: 'app-cheat-sheet',
   standalone: true,
-  imports: [AsyncPipe, NgForOf, NgIf, NgClass, UpperCasePipe, TitleCasePipe],
+  imports: [AsyncPipe, NgForOf, NgIf, NgClass, UpperCasePipe, TitleCasePipe, CardComponent],
   templateUrl: './cheat-sheet.component.html',
   styleUrl: './cheat-sheet.component.css'
 })
