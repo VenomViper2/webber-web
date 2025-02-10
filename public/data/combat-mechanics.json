@@ -24,7 +24,7 @@
       {
         "name": "Delay Action",
         "description": "Take your action after the next person's turn. This is your new initiative",
-        "type": "Standard",
+        "type": "Standard"
       },
       {
         "name": "Move",

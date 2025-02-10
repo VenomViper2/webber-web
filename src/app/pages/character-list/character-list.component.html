@@ -1,1 +1,10 @@
-<p>character-list works!</p>
+<div class="app-container">
+    @for (character of characters; track character.id) {
+        <div class="card">
+            <h2 class="name">{{ character.name }}</h2>
+            <p class="description">{{ character.description }}</p>
+            <a class="link" [routerLink]="['/character-list', character.id]">Open Character</a>
+        </div>
+    }
+</div>
+

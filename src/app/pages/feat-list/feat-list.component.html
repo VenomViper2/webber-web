@@ -1,9 +1,9 @@
 <div class="app-container">
     @for (feat of feats; track feat.id) {
-        <div class="feat-card">
-            <h2 class="feat-name">{{ feat.name }}</h2>
-            <p class="feat-description">{{ feat.description }}</p>
-            <a class="feat-link" [routerLink]="['/feat-list', feat.id]">Open Feat</a>
+        <div class="card">
+            <h2 class="name">{{ feat.name }}</h2>
+            <p class="description">{{ feat.description }}</p>
+            <a class="link" [routerLink]="['/feat-list', feat.id]">Open Feat</a>
         </div>
     }
 </div>
