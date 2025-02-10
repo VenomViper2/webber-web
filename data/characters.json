@@ -1,10 +1,83 @@
 {
   "characters": [
     {
+      "id": "1",
       "name": "Jerik Fingerhands",
+      "player": "Tom",
       "description": "The Winter Barbarian",
-      "health": "Standard",
-      "cost": 1
+      "xp": 5,
+      "attribute": [
+        {
+          "name": "power",
+          "level": 3,
+          "skills": {
+            "attack": 3,
+            "force": 1,
+            "endurance": 2,
+            "intimidation": 2,
+            "athletics": 0
+          }
+        },
+        {
+          "name": "finesse",
+          "level": 3,
+          "skills": {
+            "defence": 1,
+            "initiative": 0,
+            "preparation": 0,
+            "stealth": 0,
+            "swindling": 0
+          }
+        },
+        {
+          "name": "mind",
+          "level": 1,
+          "skills": {
+            "search": 0,
+            "study": 0,
+            "survival": 0,
+            "toxicology": 0,
+            "beastiology": 0
+          }
+        },
+        {
+          "name": "heart",
+          "level": 2,
+          "skills": {
+            "awareness": 0,
+            "scrutiny": 1,
+            "charm": 0,
+            "deception": 0,
+            "composure": 1
+          }
+        }
+      ],
+      "feats":
+        {
+          "red": 5,
+          "green": 3,
+          "blue": 2,
+          "gold": 3
+        }
+      ,
+      "equipment": [
+        {
+          "name": "Sword",
+          "size": 3,
+          "attributes": ["piercing", "two handed"]
+        }
+      ],
+      "inventory": [
+        "bone pouch necklace",
+        "flint",
+        "bedroll",
+        "5m rope",
+        "jerky",
+        "sand + lead pouch",
+        "stick that snaps",
+        "spicy chili",
+        "giant fang"
+      ]
     }
   ]
 }
