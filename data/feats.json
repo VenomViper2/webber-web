@@ -600,8 +600,8 @@
     {
       "id": "4",
       "name": "Green Feats",
-      "description": "Recover Finesse+d6 wounds. Whilst asleep, roll 2d6 and pick the highest.",
-      "fullDescription": "Recover Finesse+d6 wounds. Whilst asleep, roll 2d6 and pick the highest.",
+      "description": "Recover Finesse + d6 wounds. Whilst asleep, roll 2d6 and pick the highest.",
+      "fullDescription": "Recover Finesse + d6 wounds. Whilst asleep, roll 2d6 and pick the highest.",
       "images": [
         "green-light.jpg"
       ],
