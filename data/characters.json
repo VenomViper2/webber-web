@@ -52,12 +52,7 @@
           }
         }
       ],
-      "feats": {
-        "red": 5,
-        "green": 3,
-        "blue": 2,
-        "gold": 3
-      },
+      "feats": ["red", "green", "blue", "gold"],
       "equipment": [
         {
           "name": "Sword",
@@ -80,7 +75,7 @@
     {
       "id": "2",
       "name": "Wendwillow",
-      "player": "Mitch",
+      "player": "Mitch=",
       "description": "the swamp ranger",
       "xp": 0,
       "attribute": [
@@ -129,12 +124,7 @@
           }
         }
       ],
-      "feats": {
-        "red": 0,
-        "green": 0,
-        "blue": 0,
-        "gold": 0
-      },
+      "feats": ["red", "green", "blue", "gold"],
       "equipment": [],
       "inventory": []
     },
@@ -190,12 +180,8 @@
           }
         }
       ],
-      "feats": {
-        "red": 0,
-        "green": 0,
-        "blue": 0,
-        "gold": 0
-      },
+      "feats": ["red", "green", "blue", "gold"],
+
       "equipment": [],
       "inventory": []
     },
@@ -251,12 +237,7 @@
           }
         }
       ],
-      "feats": {
-        "red": 0,
-        "green": 0,
-        "blue": 0,
-        "gold": 0
-      },
+      "feats": ["red", "green", "blue", "gold"],
       "equipment": [],
       "inventory": []
     }
