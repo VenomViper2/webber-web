@@ -1,5 +1,8 @@
 <div class="card">
-    <h3 class="font-semibold mb-2 name">{{ name }}<span class="badge-span">{{ badge }}</span></h3>
-
+    <h3 class="font-semibold mb-2 name">{{ name }}
+        @if (badge) {
+        <span class="badge-span">{{ badge }}</span>
+        }
+    </h3>
     <p class="description">{{ description }}</p>
 </div>
