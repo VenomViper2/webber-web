@@ -9,7 +9,7 @@
 
     <h2>Attributes & Skills</h2>
         <table>
-            @for (attr of character?.attribute; track attr.name) {
+            @for (attr of character.attribute; track attr.name) {
                 <tr class="section-title">
                     <td colspan="2">{{ attr.name | titlecase  }}: {{attr.level}}</td>
                 </tr>
