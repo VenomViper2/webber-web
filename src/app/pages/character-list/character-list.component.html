@@ -1,8 +1,8 @@
 <div class="app-container">
     @for (character of characters; track character.id) {
         <div class="card">
-            <h2 class="name">{{ character.name }}</h2>
-            <p class="description">{{ character.description }}</p>
+            <h2 class="name">{{ character.name | titlecase}}</h2>
+            <p class="description">{{ character.description | titlecase }}</p>
             <a class="link" [routerLink]="['/character-list', character.id]">Open Character</a>
         </div>
     }

@@ -3,12 +3,14 @@ import { RouterLink } from '@angular/router';
 
 import { Character } from "../../model/Character";
 import { CharacterService } from "../../service/character.service";
+import { TitleCasePipe } from "@angular/common";
 
 @Component({
   selector: 'character-list',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    TitleCasePipe
   ],
   templateUrl: './character-list.component.html',
   styleUrl: './character-list.component.css'
