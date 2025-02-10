@@ -1,86 +1,100 @@
 @if (character) {
+    <div class="app-container">
+        <h2 class="name">Character Details</h2>
+        <table class="character-table">
+            <tr>
+                <td><strong>Name:</strong></td>
+                <td>{{ character.name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Player:</strong></td>
+                <td>{{ character.player }}</td>
+            </tr>
+            <tr>
+                <td><strong>Level:</strong></td>
+                <td>{{ getLevel() }}</td>
+            </tr>
+        </table>
 
-    <h2>Character Details</h2>
-
-            <p><strong>Name: {{character.name}}</strong></p>
-
-            <p><strong>Player: {{character.player}}</strong></p>
-            <p><strong>Level: {{getLevel()}}</strong></p>
-
-    <h2>Attributes & Skills</h2>
-        <table>
+        <h2 class="name mt-1">Attributes & Skills</h2>
+        <table class="character-table">
             @for (attr of character.attribute; track attr.name) {
-                <tr class="section-title">
-                    <td colspan="2">{{ attr.name | titlecase  }}: {{attr.level}}</td>
+                <tr class="section-header">
+                    <td colspan="2">{{ attr.name | titlecase }}: {{ attr.level }}</td>
                 </tr>
                 @for (skill of getSkills(attr.skills); track skill.name) {
                     <tr>
-                        <td>{{ skill.name | titlecase}}</td>
+                        <td>{{ skill.name | titlecase }}</td>
                         <td>{{ skill.value }}</td>
                     </tr>
                 }
             }
         </table>
 
-    <h2>Feats</h2>
-    <table>
-        <tr>
-        @for (feat of character.feats; track character.attribute) {
-
-                <td>{{feat}}</td><td class="center">/ {{getLightLevel(feat)}}</td>
-
-        }
-        </tr>
-    </table>
-
-    <h2>Equipment & Inventory</h2>
-    <table>
-        <tr>
-            <td><strong>Equipment:</strong></td>
-            @for (equip of character.equipment; track character.equipment) {
-                <td colspan="3">{{equip.name}}</td>
+        <h2 class="name mt-1">Feats</h2>
+        <table class="character-table">
+            @for (feat of character.feats; track character.attribute) {
+                <tr>
+                    <td>{{ feat | titlecase }}</td><td  class="text-center">/ {{ getLightLevel(feat) }}</td>
+                </tr>
             }
-        </tr>
-        <tr>
-            <td><strong>Inventory:</strong></td>
-            @for (equip of character.inventory; track character.inventory) {
-                <td colspan="3">{{equip}}</td>
-            }        </tr>
-    </table>
+        </table>
 
-    <h2>Magical Properties</h2>
-    <table>
-        <tr>
-            <td>Focus:</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Attunement:</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Tome:</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Twists:</td>
-            <td></td>
-        </tr>
-    </table>
+        <h2 class="name mt-1">Equipment & Inventory</h2>
+        <div class="inventory-container">
+            <div class="section">
+                <h3 class="section-header">Equipment</h3>
+                <div class="items-grid">
+                    @for (equip of character.equipment; track character.equipment) {
+                        <div class="item-card">{{ equip.name }}</div>
+                    }
+                </div>
+            </div>
+            <div class="section">
+                <h3 class="section-header">Inventory</h3>
+                <div class="items-grid">
+                    @for (item of character.inventory; track character.inventory) {
+                        <div class="item-card">{{ item | titlecase }}</div>
+                    }
+                </div>
+            </div>
+        </div>
 
-    <h2>Special Feats</h2>
-    <table>
-        <tr>
-            <td><strong>Heavy Strikes</strong></td>
-        </tr>
-        <tr>
-            <td><strong>Passive:</strong></td>
-        </tr>
-        <tr>
-            <td>Red</td>
-        </tr>
-    </table>
 
-} @else {
+
+
+        <h2 class="name mt-1">Magical Properties</h2>
+        <table class="character-table">
+            <tr>
+                <td>Focus:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Attunement:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Tome:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Twists:</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h2 class="name mt-1">Special Feats</h2>
+        <table class="character-table">
+            <tr class="section-header">
+                <td colspan="2">Heavy Strikes</td>
+            </tr>
+            <tr>
+                <td><strong>Passive:</strong></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+}
+@else {
     <p>Character not found</p>
 }
