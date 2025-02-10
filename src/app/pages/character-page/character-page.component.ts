@@ -3,7 +3,6 @@ import { ActivatedRoute } from "@angular/router";
 import { Character, Skills } from "../../model/Character";
 import { CharacterService } from "../../service/character.service";
 import { NgForOf, TitleCasePipe } from "@angular/common";
-import { of } from "rxjs";
 
 @Component({
   selector: 'app-character-page',
@@ -25,6 +24,10 @@ export class CharacterPageComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.initCharacter();
+  }
+
+  private initCharacter() {
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.characterService.getCharacter(id).subscribe({
@@ -39,20 +42,37 @@ export class CharacterPageComponent implements OnInit{
       });
     });
   }
+
   getSkills(skills: Skills): {name: string, value: number}[] {
     return Object.entries(skills)
             .filter(([_, value]) => value !== undefined)
             .map(([name, value]) => ({name, value: value!}));
   }
 
+  getLightLevel(color: string): number {
+    if (!this.character || !this.character.attribute) {
+      return 0;
+    }
+    switch (color) {
+      case 'red':
+        return this.character.attribute[0].level + this.getLevel();
+      case 'green':
+        return this.character.attribute[1].level + this.getLevel();
+      case 'blue':
+        return this.character.attribute[2].level + this.getLevel();
+      case 'gold':
+        return this.character.attribute[3].level + this.getLevel();
+      default:
+        return 0;
+    }
+  }
+
   getLevel(): number {
     if (!this.character) return 0;
 
-    // Sum of attribute levels
     const attributeLevels = this.character.attribute.reduce((sum, attr) =>
             sum + attr.level, 0);
 
-    // Count skills level 3 or higher
     const level3Skills = this.character.attribute.reduce((sum, attr) => {
       return sum + Object.values(attr.skills)
               .filter(skill => skill !== undefined && skill >= 3).length;
@@ -60,7 +80,6 @@ export class CharacterPageComponent implements OnInit{
 
     const totalSum = attributeLevels + level3Skills;
 
-    // Calculate level based on total sum
     let level = 1;
     if (totalSum >= 30) level = 6;
     else if (totalSum >= 25) level = 5;

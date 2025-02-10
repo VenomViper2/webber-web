@@ -4,8 +4,8 @@ export interface Character {
     player: string;
     description: string;
     xp: number;
-    attribute: Attribute[];
-    feats: Feats;
+     attribute: Attribute[];
+    feats: string[];
     equipment: Equipment[];
     inventory: string[];
 }
@@ -37,13 +37,6 @@ export interface Skills {
     charm?: number;
     deception?: number;
     composure?: number;
-}
-
-export interface Feats {
-    red: number;
-    green: number;
-    blue: number;
-    gold: number;
 }
 
 export interface Equipment {

@@ -25,10 +25,11 @@
     <h2>Feats</h2>
     <table>
         <tr>
-            <td>Red:</td> <td class="center">/{{character.feats.red}}</td>
-            <td>Green:</td> <td class="center">/{{character.feats.green}}</td>
-            <td>Blue:</td> <td class="center">/{{character.feats.blue}}</td>
-            <td>Gold:</td> <td class="center">/{{character.feats.gold}}</td>
+        @for (feat of character.feats; track character.attribute) {
+
+                <td>{{feat}}</td><td class="center">/ {{getLightLevel(feat)}}</td>
+
+        }
         </tr>
     </table>
 
