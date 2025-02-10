@@ -1,4 +1,4 @@
-name: Angular CI/CD
+name: Angular CI/CD Deployment
 
 on:
   push:
@@ -20,16 +20,13 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          npm ci
+        run: npm ci
 
       - name: Run tests
-        run: |
-          npm run test -- --watch=false --browsers=ChromeHeadless
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
 
       - name: Build
-        run: |
-          npm run build
+        run: npm run build
 
       - name: Create 404 page
         run: |
@@ -48,3 +45,4 @@ jobs:
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
+          pull-requests: true
