@@ -3,13 +3,15 @@ import { ActivatedRoute } from "@angular/router";
 import { Character, Skills } from "../../model/Character";
 import { CharacterService } from "../../service/character.service";
 import { NgForOf, TitleCasePipe } from "@angular/common";
+import { NotFoundComponent } from "../../errors/not-found/not-found.component";
 
 @Component({
   selector: 'app-character-page',
   standalone: true,
   imports: [
     NgForOf,
-    TitleCasePipe
+    TitleCasePipe,
+    NotFoundComponent
   ],
   templateUrl: './character-page.component.html',
   styleUrl: './character-page.component.css'

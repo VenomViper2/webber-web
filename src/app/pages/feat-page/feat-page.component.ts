@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Feat } from "../../model/Feat";
 import { FeatService } from "../../service/feat.service";
+import { NotFoundComponent } from "../../errors/not-found/not-found.component";
 
 @Component({
   selector: 'feat-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NotFoundComponent],
   templateUrl: './feat-page.component.html',
   styleUrl: './feat-page.component.css'
 })

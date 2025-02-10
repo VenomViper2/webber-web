@@ -84,3 +84,50 @@ th {
     border: 1px solid #e5e7eb;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+.character-info {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.info-row {
+    display: flex;
+    padding: 0.75rem;
+    border-bottom: 1px solid #edf2f7;
+    transition: background-color 0.2s ease;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row:hover {
+    background-color: #f7fafc;
+}
+
+.info-label {
+    flex: 0 0 120px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.info-value {
+    flex: 1;
+    color: #2d3748;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .info-row {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .info-label {
+        flex: none;
+    }
+}

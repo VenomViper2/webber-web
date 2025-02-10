@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,5 +11,6 @@ import { RouterLink } from '@angular/router';
     styleUrl: './not-found.component.css'
 })
 export class NotFoundComponent {
+    @ Input() message: string = 'Page not found';
 
 }

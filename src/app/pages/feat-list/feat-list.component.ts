@@ -14,6 +14,7 @@ import { Feat } from "../../model/Feat";
 })
 export class FeatListComponent implements OnInit {
   feats: Feat[] = [];
+  title = 'Feat List';
 
   constructor(private featService: FeatService) {
 

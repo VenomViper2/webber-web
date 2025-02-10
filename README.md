@@ -15,3 +15,8 @@ in the `services` package, and these services are called by various pages.
 ## Deployment
 This is currently hosted on github pages, and is deployed using the `gh-pages` package. Just pull request the master branch
 and the website will be deployed automatically, provided the pull request is accepted. 
+
+
+## TODOs
+Componentise more of the pages, and make the website more modular.
+Make Character details more dynamic, use less tables. 

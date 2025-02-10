@@ -1,6 +1,6 @@
 @if (feat) {
     <div class="app-container">
-        <h1>{{ feat.name }}</h1>
+        <h2 class="title center">{{ feat.name }}</h2>
         <div class="feat-header">
             <img [src]="feat.images[0]" [alt]="feat.name" class="feat-image">
             <p class="description">{{ feat.fullDescription }}</p>
@@ -22,5 +22,5 @@
         }
     </div>
 } @else {
-    <div>Feat not found</div>
+    <app-not-found message="Feat Not Found"></app-not-found>
 }

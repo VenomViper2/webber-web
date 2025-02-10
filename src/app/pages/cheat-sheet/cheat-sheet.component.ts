@@ -23,7 +23,7 @@ interface ViewModelState {
   boonTriggers: BoonTrigger[];
 }
 @Component({
-  selector: 'app-game-mechanics',
+  selector: 'app-cheat-sheet',
   standalone: true,
   imports: [AsyncPipe, NgForOf, NgIf, NgClass, UpperCasePipe, TitleCasePipe],
   templateUrl: './cheat-sheet.component.html',
@@ -31,6 +31,7 @@ interface ViewModelState {
 })
 export class CheatSheetComponent implements OnDestroy {
   private destroy$ = new Subject<void>();
+  title = 'Cheat Sheet';
   viewModel$: Observable<ViewModelState>;
 
   constructor(private gameMechanicsService: CheatSheetService) {

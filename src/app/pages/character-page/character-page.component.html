@@ -1,20 +1,20 @@
 @if (character) {
     <div class="app-container">
-        <h2 class="name">Character Details</h2>
-        <table class="character-table">
-            <tr>
-                <td><strong>Name:</strong></td>
-                <td>{{ character.name }}</td>
-            </tr>
-            <tr>
-                <td><strong>Player:</strong></td>
-                <td>{{ character.player }}</td>
-            </tr>
-            <tr>
-                <td><strong>Level:</strong></td>
-                <td>{{ getLevel() }}</td>
-            </tr>
-        </table>
+        <h2 class="title center">Character Details</h2>
+        <div class="character-info">
+            <div class="info-row">
+                <div class="info-label">Name</div>
+                <div class="info-value">{{ character.name }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Player</div>
+                <div class="info-value">{{ character.player }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Level</div>
+                <div class="info-value">{{ getLevel() }}</div>
+            </div>
+        </div>
 
         <h2 class="name mt-1">Attributes & Skills</h2>
         <table class="character-table">
@@ -33,7 +33,7 @@
 
         <h2 class="name mt-1">Feats</h2>
         <table class="character-table">
-            @for (feat of character.feats; track character.attribute) {
+            @for (feat of character.feats; track $index) {
                 <tr>
                     <td>{{ feat | titlecase }}</td><td  class="text-center">/ {{ getLightLevel(feat) }}</td>
                 </tr>
@@ -45,7 +45,7 @@
             <div class="section">
                 <h3 class="section-header">Equipment</h3>
                 <div class="items-grid">
-                    @for (equip of character.equipment; track character.equipment) {
+                    @for (equip of character.equipment; track $index) {
                         <div class="item-card">{{ equip.name }}</div>
                     }
                 </div>
@@ -53,7 +53,7 @@
             <div class="section">
                 <h3 class="section-header">Inventory</h3>
                 <div class="items-grid">
-                    @for (item of character.inventory; track character.inventory) {
+                    @for (item of character.inventory; track $index) {
                         <div class="item-card">{{ item | titlecase }}</div>
                     }
                 </div>
@@ -96,5 +96,6 @@
     </div>
 }
 @else {
-    <p>Character not found</p>
+    <app-not-found message="Character Not Found"></app-not-found>
+
 }

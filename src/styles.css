@@ -16,7 +16,7 @@ html, body {
     font-size: 2rem;
     font-weight: bold;
     color: #1f2937;
-    margin-bottom: 20px;
+    margin: 2rem;
 }
 
 body {
@@ -31,9 +31,9 @@ body {
 p {
     font-size: 1.2rem;
     color: #4b5563;
-    max-width: 600px;
     line-height: 1.6;
     margin-bottom: 30px;
+
 }
 
 
