@@ -10,3 +10,8 @@ My template website, currently being used to display Henge details.
 ## General layout
 Currently content for the pages is being populated using Json files in `\public`, this is fetched by services located
 in the `services` package, and these services are called by various pages. 
+
+
+## Deployment
+This is currently hosted on github pages, and is deployed using the `gh-pages` package. Just pull request the master branch
+and the website will be deployed automatically, provided the pull request is accepted. 
