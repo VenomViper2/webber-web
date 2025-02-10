@@ -4,7 +4,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AsyncPipe, NgClass, NgForOf, NgIf, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { combineLatest, map, Observable, Subject } from 'rxjs';
 import { shareReplay, takeUntil } from 'rxjs/operators';
-import { GameMechanicsService } from "../../service/game-mechanics.service";
+import { CheatSheetService } from "../../service/cheat-sheet.service";
 import {
   BasicFeat,
   BoonTrigger,
@@ -12,7 +12,7 @@ import {
   CombatAction,
   ExperienceCosts,
   RankSystem
-} from "../../model/GameMechanics";
+} from "../../model/CheetSheet";
 
 interface ViewModelState {
   combatActions: CombatAction[];
@@ -26,14 +26,14 @@ interface ViewModelState {
   selector: 'app-game-mechanics',
   standalone: true,
   imports: [AsyncPipe, NgForOf, NgIf, NgClass, UpperCasePipe, TitleCasePipe],
-  templateUrl: './game-mechanics.component.html',
-  styleUrl: './game-mechanics.component.css'
+  templateUrl: './cheat-sheet-mechanics.component.html',
+  styleUrl: './cheat-sheet-mechanics.component.css'
 })
-export class GameMechanicsComponent implements OnDestroy {
+export class CheatSheetMechanicsComponent implements OnDestroy {
   private destroy$ = new Subject<void>();
   viewModel$: Observable<ViewModelState>;
 
-  constructor(private gameMechanicsService: GameMechanicsService) {
+  constructor(private gameMechanicsService: CheatSheetService) {
     this.viewModel$ = this.initializeViewModel();
   }
 

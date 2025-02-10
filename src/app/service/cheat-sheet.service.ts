@@ -6,25 +6,25 @@ import {
   BasicFeat,
   Characteristics,
   CombatAction,
-  GameMechanics,
+  CheetSheet,
   RankSystem,
   ExperienceCosts
-} from "../model/GameMechanics";
+} from "../model/CheetSheet";
 
 @Injectable({
   providedIn: 'root'
 })
-export class GameMechanicsService {
-  private readonly MECHANICS_URL = 'data/combat-mechanics.json';
+export class CheatSheetService {
+  private readonly MECHANICS_URL = 'data/cheat-sheet.json';
   private readonly RETRY_ATTEMPTS = 3;
-  private mechanicsData$: Observable<GameMechanics>;
+  private mechanicsData$: Observable<CheetSheet>;
 
   constructor(private http: HttpClient) {
     this.mechanicsData$ = this.initializeMechanicsData();
   }
 
-  private initializeMechanicsData(): Observable<GameMechanics> {
-    return this.http.get<GameMechanics>(this.MECHANICS_URL).pipe(
+  private initializeMechanicsData(): Observable<CheetSheet> {
+    return this.http.get<CheetSheet>(this.MECHANICS_URL).pipe(
             retry(this.RETRY_ATTEMPTS),
             catchError(this.handleError),
             shareReplay(1)
@@ -36,7 +36,7 @@ export class GameMechanicsService {
             ? `Client-side error: ${error.error.message}`
             : `Server error: ${error.status} ${error.message}`;
 
-    console.error('GameMechanicsService error:', errorMessage);
+    console.error('CheetSheetService error:', errorMessage);
     return throwError(() => new Error(errorMessage));
   }
 
@@ -52,25 +52,8 @@ export class GameMechanicsService {
     );
   }
 
-  getCharacteristics(): Observable<Characteristics> {
-    return this.mechanicsData$.pipe(
-            map(data => data.characteristics)
-    );
-  }
 
-  getRankSystem(): Observable<RankSystem> {
-    return this.mechanicsData$.pipe(
-            map(data => data.rankSystem)
-    );
-  }
-
-  getExperienceCosts(): Observable<ExperienceCosts> {
-    return this.mechanicsData$.pipe(
-            map(data => data.experienceCosts)
-    );
-  }
-
-  getAllMechanics(): Observable<GameMechanics> {
+  getAllMechanics(): Observable<CheetSheet> {
     return this.mechanicsData$;
   }
 }

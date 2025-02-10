@@ -74,7 +74,7 @@ export interface Characteristics {
     derivedStats: DerivedStats;
 }
 
-export interface GameMechanics {
+export interface CheetSheet {
     combatActions: {
         baseActions: CombatAction[];
         reactions: CombatAction[];
