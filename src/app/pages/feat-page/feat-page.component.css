@@ -57,16 +57,7 @@
     color: #4b5563;
 }
 
-.type-span {
-    margin-left: 12px;
-    display: inline-block;
-    font-weight: bold;
-    color: #6b7280;
-    background: #f3f4f6;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
+
 
 @media (max-width: 768px) {
     .feat-image {
