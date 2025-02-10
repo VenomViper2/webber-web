@@ -27,6 +27,21 @@ export const routes: Routes = [
         ]
     },
     {
+        path: 'character-list',
+        children: [
+            {
+                path: '',
+                loadComponent: () => import('./pages/character-list/character-list.component').then(m => m.CharacterListComponent),
+                title: 'Character List'
+            },
+            {
+                path: ':id',
+                loadComponent: () => import('./pages/character-page/character-page.component').then(m => m.CharacterPageComponent),
+                title: 'Character'
+            }
+        ]
+    },
+    {
         path: '**',
         loadComponent: () => import('./errors/not-found/not-found.component').then(m => m.NotFoundComponent),
         title: '404 - Not Found'

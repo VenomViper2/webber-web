@@ -125,6 +125,23 @@ grid {
     border-radius: 6px;
     font-size: 0.875rem;
 }
+.border-left-red {
+    border-left: 4px solid #ff1e1e; /* Red */
+}
+
+.border-left-green {
+    border-left: 4px solid #22c55e; /* Green */
+}
+
+.border-left-blue {
+    border-left: 4px solid #3b82f6; /* Blue */
+}
+
+.border-left-gold {
+    border-left: 4px solid #ffd700; /* Gold */
+}
+
+
 @media (max-width: 768px) {
     .app-container {
         padding: 20px;

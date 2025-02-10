@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavigationLink } from '../../model/NavigationLink';
 import { FeatService } from "../../service/feat.service";
+import { CharacterService } from "../../service/character.service";
 
 @Component({
     selector: 'app-header',
@@ -17,13 +18,16 @@ export class HeaderComponent implements OnInit {
         {path: '/', label: 'Home', exact: true},
         {path: '/mechanics', label: 'Cheat Sheet', exact: true},
         {path: '/feat-list', label: 'Feats', dropdownItems: []},
+        {path: '/character-list', label: 'Characters', dropdownItems: []},
+
     ];
 
-    constructor(private featService: FeatService) {
+    constructor(private featService: FeatService, private characterService: CharacterService) {
     }
 
     ngOnInit() {
         this.populateFeats();
+        this.populateCharacters();
     }
 
 
@@ -41,6 +45,19 @@ export class HeaderComponent implements OnInit {
         });
     }
 
+    populateCharacters() {
+        this.characterService.getAllCharacters().subscribe(character => {
+            const characterLinks = character.map(character => ({
+                path: `/character-list/${ character.id }`,
+                label: character.name
+            }));
+
+            const characterNav = this.navigationLinks.find(nav => nav.path === '/character-list');
+            if (characterNav) {
+                characterNav.dropdownItems = characterLinks;
+            }
+        });
+    }
 
     toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
