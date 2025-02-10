@@ -167,27 +167,27 @@
     "calculation": "Sum of all attributes + (1 for each level 3 skill). Each time the character’s rank increases, they may select one Feat of Light for which they meet the prerequisites, and gain it for free." ,
     "thresholds": [
       {
-        "value": 1,
+        "value": "Total Sum: 1",
         "rank": 1
       },
       {
-        "value": 10,
+        "value": "Total Sum: 10",
         "rank": 2
       },
       {
-        "value": 15,
+        "value": "Total Sum: 15",
         "rank": 3
       },
       {
-        "value": 20,
+        "value": "Total Sum: 20",
         "rank": 4
       },
       {
-        "value": 25,
+        "value": "Total Sum: 25",
         "rank": 5
       },
       {
-        "value": 30,
+        "value": "Total Sum: 30",
         "rank": 6
       }
     ],
