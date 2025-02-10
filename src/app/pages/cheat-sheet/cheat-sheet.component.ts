@@ -26,10 +26,10 @@ interface ViewModelState {
   selector: 'app-game-mechanics',
   standalone: true,
   imports: [AsyncPipe, NgForOf, NgIf, NgClass, UpperCasePipe, TitleCasePipe],
-  templateUrl: './cheat-sheet-mechanics.component.html',
-  styleUrl: './cheat-sheet-mechanics.component.css'
+  templateUrl: './cheat-sheet.component.html',
+  styleUrl: './cheat-sheet.component.css'
 })
-export class CheatSheetMechanicsComponent implements OnDestroy {
+export class CheatSheetComponent implements OnDestroy {
   private destroy$ = new Subject<void>();
   viewModel$: Observable<ViewModelState>;
 

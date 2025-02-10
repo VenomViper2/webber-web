@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     isMenuOpen = false;
     navigationLinks: NavigationLink[] = [
         {path: '/', label: 'Home', exact: true},
-        {path: '/mechanics', label: 'Cheat Sheet', exact: true},
+        {path: '/cheat-sheet', label: 'Cheat Sheet', exact: true},
         {path: '/feat-list', label: 'Feats', dropdownItems: []},
         {path: '/character-list', label: 'Characters', dropdownItems: []},
 
