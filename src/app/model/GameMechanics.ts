@@ -2,7 +2,6 @@ export interface CombatAction {
     name: string;
     description: string;
     type: 'Standard' | 'Reaction';
-    cost?: number;
     refresh?: string;
 }
 
