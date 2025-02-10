@@ -1,1 +1,0 @@
-import{La as n,Ma as r,Ua as o,W as a,Ya as s}from"./chunk-M4C75B33.js";var c=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=a({type:t,selectors:[["app-character-list"]],standalone:!0,features:[s],decls:2,vars:0,template:function(e,p){e&1&&(n(0,"p"),o(1,"character-list works!"),r())}})};export{c as CharacterListComponent};

@@ -4,62 +4,52 @@
       {
         "name": "Attack",
         "description": "Attack Skill against target's Defence to deal weapon's damage",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Defend",
         "description": "Treat your Finesse as being 4 higher for calculating your defence until next turn",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Feat",
         "description": "Make use of one of the Feats of Light which require an Action to use",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Miscellaneous",
         "description": "Use a skill within reasonable bounds, as determined by the GM",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Delay Action",
         "description": "Take your action after the next person's turn. This is your new initiative",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Move",
         "description": "Move considerably further than usual",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Preparation",
         "description": "Prepare weapon after being used for a ranged attack",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Study Enemy",
         "description": "Test Mind against against the opponent's Mind Defence to gain a Boon",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Take Stock",
         "description": "Test Heart Awareness to look around for something that can be done",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       },
       {
         "name": "Monologue",
         "description": "Speak up to 10 additional words",
-        "type": "Standard",
-        "cost": 1
+        "type": "Standard"
       }
     ],
     "reactions": [

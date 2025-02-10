@@ -52,14 +52,12 @@
           }
         }
       ],
-      "feats":
-        {
-          "red": 5,
-          "green": 3,
-          "blue": 2,
-          "gold": 3
-        }
-      ,
+      "feats": {
+        "red": 5,
+        "green": 3,
+        "blue": 2,
+        "gold": 3
+      },
       "equipment": [
         {
           "name": "Sword",
@@ -78,6 +76,189 @@
         "spicy chili",
         "giant fang"
       ]
+    },
+    {
+      "id": "2",
+      "name": "Wendwillow",
+      "player": "Mitch",
+      "description": "the swamp ranger",
+      "xp": 0,
+      "attribute": [
+        {
+          "name": "power",
+          "level": 0,
+          "skills": {
+            "attack": 0,
+            "force": 0,
+            "endurance": 0,
+            "intimidation": 0,
+            "athletics": 0
+          }
+        },
+        {
+          "name": "finesse",
+          "level": 0,
+          "skills": {
+            "defence": 0,
+            "initiative": 0,
+            "preparation": 0,
+            "stealth": 0,
+            "swindling": 0
+          }
+        },
+        {
+          "name": "mind",
+          "level": 0,
+          "skills": {
+            "search": 0,
+            "study": 0,
+            "survival": 0,
+            "toxicology": 0,
+            "beastiology": 0
+          }
+        },
+        {
+          "name": "heart",
+          "level": 0,
+          "skills": {
+            "awareness": 0,
+            "scrutiny": 0,
+            "charm": 0,
+            "deception": 0,
+            "composure": 0
+          }
+        }
+      ],
+      "feats": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "gold": 0
+      },
+      "equipment": [],
+      "inventory": []
+    },
+    {
+      "id": "3",
+      "name": "Layla",
+      "player": "Matt",
+      "description": "the Little",
+      "xp": 0,
+      "attribute": [
+        {
+          "name": "power",
+          "level": 0,
+          "skills": {
+            "attack": 0,
+            "force": 0,
+            "endurance": 0,
+            "intimidation": 0,
+            "athletics": 0
+          }
+        },
+        {
+          "name": "finesse",
+          "level": 0,
+          "skills": {
+            "defence": 0,
+            "initiative": 0,
+            "preparation": 0,
+            "stealth": 0,
+            "swindling": 0
+          }
+        },
+        {
+          "name": "mind",
+          "level": 0,
+          "skills": {
+            "search": 0,
+            "study": 0,
+            "survival": 0,
+            "toxicology": 0,
+            "beastiology": 0
+          }
+        },
+        {
+          "name": "heart",
+          "level": 0,
+          "skills": {
+            "awareness": 0,
+            "scrutiny": 0,
+            "charm": 0,
+            "deception": 0,
+            "composure": 0
+          }
+        }
+      ],
+      "feats": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "gold": 0
+      },
+      "equipment": [],
+      "inventory": []
+    },
+    {
+      "id": "4",
+      "name": "Demikas",
+      "player": "Ben",
+      "description": "The tinkerer",
+      "xp": 0,
+      "attribute": [
+        {
+          "name": "power",
+          "level": 0,
+          "skills": {
+            "attack": 0,
+            "force": 0,
+            "endurance": 0,
+            "intimidation": 0,
+            "athletics": 0
+          }
+        },
+        {
+          "name": "finesse",
+          "level": 0,
+          "skills": {
+            "defence": 0,
+            "initiative": 0,
+            "preparation": 0,
+            "stealth": 0,
+            "swindling": 0
+          }
+        },
+        {
+          "name": "mind",
+          "level": 0,
+          "skills": {
+            "search": 0,
+            "study": 0,
+            "survival": 0,
+            "toxicology": 0,
+            "beastiology": 0
+          }
+        },
+        {
+          "name": "heart",
+          "level": 0,
+          "skills": {
+            "awareness": 0,
+            "scrutiny": 0,
+            "charm": 0,
+            "deception": 0,
+            "composure": 0
+          }
+        }
+      ],
+      "feats": {
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "gold": 0
+      },
+      "equipment": [],
+      "inventory": []
     }
   ]
 }
