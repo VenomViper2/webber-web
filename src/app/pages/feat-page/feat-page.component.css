@@ -36,11 +36,24 @@
     border-radius: 10px;
     background: #ffffff;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #3b82f6;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 10px;
 }
+.border-left-red {
+    border-left: 4px solid #ff1e1e; /* Red */
+}
 
+.border-left-green {
+    border-left: 4px solid #22c55e; /* Green */
+}
+
+.border-left-blue {
+    border-left: 4px solid #3b82f6; /* Blue */
+}
+
+.border-left-gold {
+    border-left: 4px solid #ffd700; /* Gold */
+}
 .feat-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);

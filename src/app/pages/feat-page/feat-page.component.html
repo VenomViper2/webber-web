@@ -6,14 +6,20 @@
             <p class="description">{{ feat.fullDescription }}</p>
         </div>
     </div>
- <div class="app-container">
-    @for (feature of feat.featList; track feature) {
-        <div class="feat-item">
-            <h3>{{ feature.name }}</h3>
-            <p>{{ feature.level }}<span class="badge-span">{{ feature.type }}</span></p>
-            <p>{{ feature.description }}</p>
-        </div>
-    }
+    <div class="app-container">
+        @for (feature of feat.featList; track feature) {
+            <div class="feat-item" [ngClass]="{
+        'border-left-red': feat.name === 'Red Feats',
+        'border-left-blue': feat.name === 'Blue Feats',
+        'border-left-green': feat.name === 'Green Feats',
+        'border-left-gold': feat.name === 'Gold Feats'
+         }">
+
+                <h3>{{ feature.name }}</h3>
+                <p>{{ feature.level }}<span class="badge-span">{{ feature.type }}</span></p>
+                <p>{{ feature.description }}</p>
+            </div>
+        }
     </div>
 } @else {
     <div>Feat not found</div>
