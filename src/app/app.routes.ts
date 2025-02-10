@@ -8,7 +8,7 @@ export const routes: Routes = [
     },
     {
         path: 'mechanics',
-        loadComponent: () => import('./pages/game-mechanics/cheat-sheet-mechanics.component').then(m => m.CheatSheetMechanicsComponent),
+        loadComponent: () => import('./pages/cheat-sheet/cheat-sheet-mechanics.component').then(m => m.CheatSheetMechanicsComponent),
         title: 'Game Mechanics'
     },
     {

@@ -64,9 +64,4 @@ code {
     .grid-layout {
         grid-template-columns: 1fr;
     }
-
-
-    h2 {
-        font-size: 1.5rem;
-    }
 }

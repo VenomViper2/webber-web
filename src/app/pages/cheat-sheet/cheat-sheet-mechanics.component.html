@@ -1,13 +1,14 @@
-<div class="app-container bg-gray-50 p-6">
+<div class=" bg-gray-50 p-6">
+    <h1 class="title center">Cheat Sheet</h1>
     @if (viewModel$ | async; as vm) {
         <section class="mechanics-section mb-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Combat Actions</h2>
             <div class="grid-layout">
                 @for (action of vm.combatActions; track action.name) {
                     <div class="card">
-                        <h3 class="text-xl font-semibold mb-2">{{ action.name }}<span class="badge-span">{{ action.type }}</span></h3>
+                        <h3 class="font-semibold mb-2 name">{{ action.name }}<span class="badge-span">{{ action.type }}</span></h3>
 
-                        <p class="text-gray-600 my-3">{{ action.description }}</p>
+                        <p class="description">{{ action.description }}</p>
                         @if (action.refresh) {
                             <div class="info-tag">Refresh: {{ action.refresh }}</div>
                         }
@@ -21,8 +22,8 @@
             <div class="grid-layout">
                 @for (feat of vm.basicFeats; track feat.name) {
                     <div class="card">
-                        <h3 class="text-xl font-semibold mb-2">{{ feat.name }}<span class="badge-span">{{ feat.type }}</span></h3>
-                        <p class="text-gray-600 my-3">{{ feat.effect }}</p>
+                        <h3 class="name mb-1">{{ feat.name }}<span class="badge-span">{{ feat.type }}</span></h3>
+                        <p class="description">{{ feat.effect }}</p>
                     </div>
                 }
             </div>
@@ -30,12 +31,12 @@
 
         <section class="mechanics-section mb-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-4">Rank System</h2>
-            <p class="text-gray-600 mb-4">{{vm.rankSystem.calculation}}</p>
+            <p>{{vm.rankSystem.calculation}}</p>
             <div class="grid-layout">
                 @for (rank of vm.rankSystem.thresholds; track rank.rank) {
                     <div class="card bg-gradient-to-br from-gray-50 to-gray-100">
-                        <h3 class="text-xl font-semibold mb-2">Level: {{ rank.rank }}</h3>
-                        <div class="text-gray-700">Total Sum: {{ rank.value }}</div>
+                        <h3 class="name">Level: {{ rank.rank }}</h3>
+                        <div class="description">Total Sum: {{ rank.value }}</div>
                     </div>
                 }
             </div>
@@ -46,8 +47,8 @@
             <div class="grid-layout">
                 @for (stat of getStatsEntries(vm.characteristics.derivedStats); track stat.name) {
                     <div class="card">
-                        <h3 class="text-xl font-semibold mb-2">{{ stat.name | titlecase}}</h3>
-                        <code class="block bg-gray-100 p-2 rounded text-sm">{{ stat.formula }}</code>
+                        <h3 class="name">{{ stat.name | titlecase}}</h3>
+                        <code class="description">{{ stat.formula }}</code>
                     </div>
                 }
             </div>
@@ -58,12 +59,12 @@
             <div class="grid-layout">
                 @for (cost of getExperienceCostEntries(vm.experienceCosts); track cost.type) {
                     <div class="card">
-                        <h3 class="text-xl font-semibold mb-2">{{ cost.type | titlecase}}</h3>
+                        <h3 class="name">{{ cost.type | titlecase}}</h3>
                         @if (cost.formula) {
-                            <p class="text-gray-600">Formula: <code class="bg-gray-100 px-2 py-1 rounded">{{ cost.formula }}</code></p>
+                            <p class="description">Formula: <code class="bg-gray-100 px-2 py-1 rounded">{{ cost.formula }}</code></p>
                         }
                         @if (cost.cost !== undefined) {
-                            <p class="text-gray-600">Fixed Cost: <span class="font-medium">{{ cost.cost }}</span></p>
+                            <p class="description">Fixed Cost: <span class="font-medium">{{ cost.cost }}</span></p>
                         }
                     </div>
                 }
