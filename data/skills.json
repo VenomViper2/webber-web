@@ -1,0 +1,129 @@
+{
+  "skillSystem": {
+    "levelSystem": {
+      "maxLevel": 3,
+      "levels": {
+        "1": {
+          "name": "Level One",
+          "ability": "Re-roll one dice before applying boons"
+        },
+        "2": {
+          "name": "Level Two",
+          "ability": "Add an extra dice to the initial roll"
+        },
+        "3": {
+          "name": "Level Three",
+          "ability": "Nudge one dice by increasing or decreasing its value by 1 before applying boons"
+        }
+      }
+    },
+    "attributes": {
+      "power": {
+        "name": "Power",
+        "skills": {
+          "attack": {
+            "name": "Attack",
+            "description": "Used to land attacks made with the attack action"
+          },
+          "force": {
+            "name": "Force",
+            "description": "Used to lift, push, or destroy inanimate things"
+          },
+          "endurance": {
+            "name": "Endurance",
+            "description": "Used to resist disease, poisons and weather"
+          },
+          "intimidation": {
+            "name": "Intimidation",
+            "description": "Used to scare targets. The target can use Power or Composure for defence"
+          },
+          "athletics": {
+            "name": "Athletics",
+            "description": "Used for climbing, swimming, jumping and similar things"
+          }
+        }
+      },
+      "finesse": {
+        "name": "Finesse",
+        "skills": {
+          "defence": {
+            "name": "Defence",
+            "description": "Used to avoid threats outside of combat. Increases defence in combat"
+          },
+          "initiative": {
+            "name": "Initiative",
+            "description": "Used to determine initiative order in combat"
+          },
+          "preparation": {
+            "name": "Preparation",
+            "description": "Used to successfully prepare with the preparation action"
+          },
+          "stealth": {
+            "name": "Stealth",
+            "description": "Used to conceal one's presence from others"
+          },
+          "swindling": {
+            "name": "Swindling",
+            "description": "Used to make small actions without being noticed, such as pickpocketing"
+          }
+        }
+      },
+      "mind": {
+        "name": "Mind",
+        "skills": {
+          "search": {
+            "name": "Search",
+            "description": "Used to scan an area to make a conscious effort to find or spot something"
+          },
+          "study": {
+            "name": "Study",
+            "description": "Used to find or recall knowledge on obscure topics"
+          },
+          "survival": {
+            "name": "Survival",
+            "description": "Used to find food, build shelters, and locate Henge Tablets"
+          },
+          "toxicology": {
+            "name": "Toxicology",
+            "description": "Used to refine and manipulate poisons"
+          },
+          "beastiology": {
+            "name": "Beastiology",
+            "description": "Used to identify or recall behaviours and weaknesses of Beasts"
+          }
+        }
+      },
+      "heart": {
+        "name": "Heart",
+        "skills": {
+          "awareness": {
+            "name": "Awareness",
+            "description": "Used to passively identify unknown hidden dangers and small details"
+          },
+          "scrutiny": {
+            "name": "Scrutiny",
+            "description": "Used to separate truth from lies, and determine a person's intentions"
+          },
+          "charm": {
+            "name": "Charm",
+            "description": "Used to befriend a person, and encourage them to show kindness"
+          },
+          "deception": {
+            "name": "Deception",
+            "description": "Used to give mistruths to a character without being identified"
+          },
+          "composure": {
+            "name": "Composure",
+            "description": "Used to resist attempts of manipulation"
+          }
+        }
+      }
+    },
+    "specialRules": {
+      "searchVsAwareness": {
+        "search": "Character must have some idea of what they are looking for and take an active approach. Must be proactive in taking a Search test",
+        "awareness": "Can be used at any time to pick up details from surroundings. GM can prompt character to take an Awareness test"
+      }
+    }
+  }
+}
