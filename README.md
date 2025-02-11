@@ -20,3 +20,4 @@ and the website will be deployed automatically, provided the pull request is acc
 ## TODOs
 Componentise more of the pages, and make the website more modular.
 Make Character details more dynamic, use less tables. 
+Remove over complex View model from cheat sheet.
