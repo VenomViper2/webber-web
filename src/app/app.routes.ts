@@ -12,6 +12,11 @@ export const routes: Routes = [
         title: 'Cheat Sheet'
     },
     {
+        path: 'map',
+        loadComponent: () => import('./pages/map/map.component').then(m => m.MapComponent),
+        title: 'World Maps'
+    },
+    {
         path: 'feat-list',
         children: [
             {
