@@ -104,6 +104,9 @@ h3 {
 .items-center {
     align-items: center;
 }
+.justify-center {
+    justify-items: center;
+}
 
 .justify-between {
     justify-content: space-between;
