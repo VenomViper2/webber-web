@@ -34,7 +34,7 @@
             <h2>Derived Stats</h2>
             <div class="grid-layout">
                 @for (stat of getStatsEntries(vm.characteristics.derivedStats); track stat.name) {
-                    <app-card [name]="stat.name | titlecase" [description]="stat.formula" [type]="'gold'"></app-card>
+                    <app-card [name]="stat.name | titlecase" [description]="stat.formula" [type]="'orange'"></app-card>
                 }
             </div>
         </section>
