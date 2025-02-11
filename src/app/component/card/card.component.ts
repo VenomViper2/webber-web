@@ -16,7 +16,8 @@ export class CardComponent {
     @Input() name?: string;
     @Input() badge?: string;
     @Input() link?: string;
+    @Input() subtitle?: string;
     @Input() description?: string;
-    @Input() type: 'blue' | 'red' | 'green' | 'yellow' | 'gold' = 'gold';
+    @Input() type: 'blue' | 'red' | 'green' | 'yellow' | 'gold' | 'orange' = 'gold';
 
 }

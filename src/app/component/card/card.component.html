@@ -1,11 +1,15 @@
 <div class="card" [ngClass]="type">
     <h3 class="name">{{ name }}
-        @if (badge) {
+        @if (badge && !subtitle) {
         <span class="badge-span">{{ badge }}</span>
+        }
+        @if (subtitle && badge) {
+            <p>{{ subtitle }}<span class="badge-span">{{ badge }}</span></p>
+
         }
     </h3>
     <p class="description">{{ description }}</p>
     @if (link){
-        <a class="link" [routerLink]="link">Open Feat</a>
+        <a class="link" [routerLink]="link">Open</a>
     }
 </div>

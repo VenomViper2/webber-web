@@ -1,10 +1,14 @@
 <div class="app-container">
+    <h1 class="title center">{{title}}</h1>
+
     @for (character of characters; track character.id) {
-        <div class="card">
-            <h2 class="name">{{ character.name | titlecase}}</h2>
-            <p class="description">{{ character.description | titlecase }}</p>
-            <a class="link" [routerLink]="['/character-list', character.id]">Open Character</a>
-        </div>
+        <app-card
+                [name]="character.name | titlecase"
+                [description]="character.description | titlecase"
+                [link]="'/character-list/' + character.id"
+                [type]="getColor(character.name)"
+        >
+        </app-card>
     }
 </div>
 
