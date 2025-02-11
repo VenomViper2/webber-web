@@ -1,0 +1,26 @@
+.blue {
+    border-left: 4px solid #3b82f6;
+    border-radius: 10px;
+
+}
+
+.red {
+    border-left: 4px solid #ff1e1e;
+    border-radius: 10px;
+
+}
+
+.green {
+    border-left: 4px solid #22c55e;
+    border-radius: 10px;
+}
+
+.gold {
+    border-left: 4px solid #f6dd3b;
+    border-radius: 10px;
+}
+
+.orange {
+    border-left: 4px solid #f6893b;
+    border-radius: 10px;
+}

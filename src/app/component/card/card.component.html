@@ -1,8 +1,11 @@
-<div class="card">
-    <h3 class="font-semibold mb-2 name">{{ name }}
+<div class="card" [ngClass]="type">
+    <h3 class="name">{{ name }}
         @if (badge) {
         <span class="badge-span">{{ badge }}</span>
         }
     </h3>
     <p class="description">{{ description }}</p>
+    @if (link){
+        <a class="link" [routerLink]="link">Open Feat</a>
+    }
 </div>

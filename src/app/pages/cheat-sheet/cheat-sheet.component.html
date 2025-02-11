@@ -5,7 +5,7 @@
             <h2>Combat Actions</h2>
             <div class="grid-layout">
                 @for (action of vm.combatActions; track action.name) {
-                    <app-card [name]="action.name" [badge]="action.type" [description]="action.description"></app-card>
+                    <app-card [name]="action.name" [badge]="action.type" [description]="action.description" [type]="'red'"></app-card>
                 }
             </div>
         </section>
@@ -14,7 +14,7 @@
             <h2>Basic Feats</h2>
             <div class="grid-layout">
                 @for (feat of vm.basicFeats; track feat.name) {
-                    <app-card [name]="feat.name" [badge]="feat.type" [description]="feat.effect"></app-card>
+                    <app-card [name]="feat.name" [badge]="feat.type" [description]="feat.effect" [type]="'blue'"></app-card>
                 }
             </div>
         </section>
@@ -24,7 +24,7 @@
             <p>{{vm.rankSystem.calculation}}</p>
             <div class="grid-layout">
                 @for (rank of vm.rankSystem.thresholds; track rank.rank) {
-                    <app-card [name]="rank.rank" [description]="rank.value.toString()"></app-card>
+                    <app-card [name]="rank.rank" [description]="rank.value.toString()" [type]="'green'"></app-card>
 
                 }
             </div>
@@ -34,7 +34,7 @@
             <h2>Derived Stats</h2>
             <div class="grid-layout">
                 @for (stat of getStatsEntries(vm.characteristics.derivedStats); track stat.name) {
-                    <app-card [name]="stat.name | titlecase" [description]="stat.formula"></app-card>
+                    <app-card [name]="stat.name | titlecase" [description]="stat.formula" [type]="'gold'"></app-card>
                 }
             </div>
         </section>

@@ -1,11 +1,7 @@
 <div class="app-container">
     <h1 class="title center">{{title}}</h1>
     @for (feat of feats; track feat.id) {
-        <div class="card">
-            <h2 class="name">{{ feat.name }}</h2>
-            <p class="description">{{ feat.description }}</p>
-            <a class="link" [routerLink]="['/feat-list', feat.id]">Open Feat</a>
-        </div>
+        <app-card [name]="feat.name" [description]="feat.description" [link]="'/feat-list/' + feat.id" [type]="getColor(feat.name)"></app-card>
     }
 </div>
 
