@@ -13,6 +13,7 @@ import { CardComponent } from "../../component/card/card.component";
   styleUrl: './skills.component.css'
 })
 export class SkillsComponent implements OnInit{
+  title = 'Skills';
   skills: WritableSignal<Skill[]> = signal([]);
 
   constructor(private skillService: SkillService) {}

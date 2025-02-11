@@ -1,5 +1,8 @@
-<div class="app-container" style="display: grid; grid-template-columns: repeat(3, 33%); gap: 1rem; padding: 1rem;">
+<div class="app-container">
+    <h2 class="title center">{{ title }}</h2>
+    <div class="skills-grid">
     @for (skill of skills(); track skill.name) {
         <app-card [name]="skill.name" [description]="skill.description" ></app-card>
     }
+</div>
 </div>
