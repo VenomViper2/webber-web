@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { Character, Skills } from "../../model/Character";
+import { Character, CharacterSkills } from "../../model/Character";
 import { CharacterService } from "../../service/character.service";
 import { NgForOf, TitleCasePipe } from "@angular/common";
 import { NotFoundComponent } from "../../errors/not-found/not-found.component";
@@ -45,7 +45,7 @@ export class CharacterPageComponent implements OnInit{
     });
   }
 
-  getSkills(skills: Skills): {name: string, value: number}[] {
+  getSkills(skills: CharacterSkills): {name: string, value: number}[] {
     return Object.entries(skills)
             .filter(([_, value]) => value !== undefined)
             .map(([name, value]) => ({name, value: value!}));

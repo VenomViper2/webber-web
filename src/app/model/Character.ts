@@ -4,19 +4,19 @@ export interface Character {
     player: string;
     description: string;
     xp: number;
-     attribute: Attribute[];
+    attribute: CharacterAttribute[];
     feats: string[];
-    equipment: Equipment[];
+    equipment: CharacterEquipment[];
     inventory: string[];
 }
 
-export interface Attribute {
+export interface CharacterAttribute {
     name: string;
     level: number;
-    skills: Skills;
+    skills: CharacterSkills;
 }
 
-export interface Skills {
+export interface CharacterSkills {
     attack?: number;
     force?: number;
     endurance?: number;
@@ -39,7 +39,7 @@ export interface Skills {
     composure?: number;
 }
 
-export interface Equipment {
+export interface CharacterEquipment {
     name: string;
     size: number;
     attributes: string[];

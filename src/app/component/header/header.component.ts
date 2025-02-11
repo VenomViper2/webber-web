@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
         {path: '/', label: 'Home', exact: true},
         {path: '/cheat-sheet', label: 'Cheat Sheet', exact: true},
         {path: '/map', label: 'Map', exact: true},
+        {path: '/skills', label: 'Skills', exact: true},
         {path: '/feat-list', label: 'Feats', dropdownItems: []},
         {path: '/character-list', label: 'Characters', dropdownItems: []},
 

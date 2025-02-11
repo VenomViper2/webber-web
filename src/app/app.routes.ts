@@ -12,6 +12,11 @@ export const routes: Routes = [
         title: 'Cheat Sheet'
     },
     {
+        path: 'skills',
+        loadComponent: () => import('./pages/skills/skills.component').then(m => m.SkillsComponent),
+        title: 'Skills'
+    },
+    {
         path: 'map',
         loadComponent: () => import('./pages/map/map.component').then(m => m.MapComponent),
         title: 'World Maps'
