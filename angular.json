@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/webber-web/browser",
+            "outputPath": "dist/webber-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -33,7 +33,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/webber-web/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
