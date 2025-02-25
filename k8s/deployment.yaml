@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webber-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webber-web
+  template:
+    metadata:
+      labels:
+        app: webber-web
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: webber-web
+          image: registry.digitalocean.com/tppt-registry/webber-web:v1
+          ports:
+            - containerPort: 80
