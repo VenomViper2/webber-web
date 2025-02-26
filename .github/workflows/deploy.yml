@@ -1,4 +1,4 @@
-name: Angular CI/CD Deployment
+name: Angular CI/CD
 
 on:
   push:
@@ -7,9 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -23,55 +22,36 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run test -- --watch=false --browsers=ChromeHeadless
+        run: npm test -- --watch=false --browsers=ChromeHeadless
 
-      - name: Build Angular App
-        run: npm run build
+      - name: Build Angular app
+        run: npm run build -- --configuration=production --project=webber-web
 
       - name: Create 404 page
-        run: |
-          if [ -f "dist/webber-web/browser/index.html" ]; then
-            cp dist/webber-web/browser/index.html dist/webber-web/browser/404.html
-            echo "✅ 404 page created successfully"
-          else
-            echo "❌ index.html not found at expected location"
-            find dist -name "index.html"
-          fi
+        run: cp dist/webber-web/browser/index.html dist/webber-web/browser/404.html
 
-      - name: Log in to DigitalOcean Container Registry
-        run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login registry.digitalocean.com -u oauth --password-stdin
+      - name: Login to DigitalOcean Registry
+        uses: docker/login-action@v2
+        with:
+          registry: registry.digitalocean.com
+          username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-      - name: Build and Tag Docker Image
-        run: |
-          docker build -t registry.digitalocean.com/tppt-registry/webber-web:latest .
-          docker tag registry.digitalocean.com/tppt-registry/webber-web:latest registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: |
+            registry.digitalocean.com/tppt-registry/webber-web:latest
+            registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
 
-      - name: Push Docker Image
-        run: |
-          docker push registry.digitalocean.com/tppt-registry/webber-web:latest
-          docker push registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
+      - name: Deploy to Kubernetes
+        uses: azure/k8s-set-context@v3
+        with:
+          kubeconfig: ${{ secrets.KUBECONFIG_BASE64 }}
 
-      - name: Configure kubectl
+      - name: Update deployment
         run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-          export KUBECONFIG=$HOME/.kube/config
-          kubectl config use-context do-lon1-my-cluster  # Replace with your actual context name
-
-      - name: Verify Kubernetes Cluster Connection
-        run: |
-          echo "✅ Checking Kubernetes connection..."
-          kubectl cluster-info
-          kubectl get nodes
-          kubectl get deployments -n default
-
-      - name: Update Kubernetes Deployment
-        run: |
-          echo "🚀 Updating deployment with new image..."
-          kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} --namespace=default
-          kubectl rollout restart deployment/webber-web --namespace=default
-
-      - name: Verify Deployment Status
-        run: |
-          echo "🔍 Checking deployment status..."
-          kubectl get pods -n default
+          kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
+          kubectl rollout status deployment/webber-web
