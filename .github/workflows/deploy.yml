@@ -50,7 +50,7 @@ jobs:
         uses: azure/k8s-set-context@v3
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.KUBECONFIG }}
+          kubeconfig-base64: ${{ secrets.KUBECONFIG }}
           context: do-lon1-my-cluster
 
       - name: Update deployment
