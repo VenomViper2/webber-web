@@ -45,6 +45,9 @@ jobs:
           tags: |
             registry.digitalocean.com/tppt-registry/webber-web:latest
             registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
