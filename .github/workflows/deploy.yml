@@ -32,18 +32,16 @@ jobs:
         run: |
           if [ -f "dist/webber-web/browser/index.html" ]; then
             cp dist/webber-web/browser/index.html dist/webber-web/browser/404.html
-            echo "404 page created successfully"
+            echo "✅ 404 page created successfully"
           else
-            echo "index.html not found at expected location"
+            echo "❌ index.html not found at expected location"
             find dist -name "index.html"
           fi
 
       - name: Log in to DigitalOcean Container Registry
-        run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login registry.digitalocean.com -u $DOCKER_USERNAME --password-stdin
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login registry.digitalocean.com -u oauth --password-stdin
 
-      - name: Build Docker Image
+      - name: Build and Tag Docker Image
         run: |
           docker build -t registry.digitalocean.com/tppt-registry/webber-web:latest .
           docker tag registry.digitalocean.com/tppt-registry/webber-web:latest registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
@@ -55,10 +53,25 @@ jobs:
 
       - name: Configure kubectl
         run: |
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > kubeconfig
-          export KUBECONFIG=$(pwd)/kubeconfig
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+          export KUBECONFIG=$HOME/.kube/config
+          kubectl config use-context do-lon1-my-cluster  # Replace with your actual context name
+
+      - name: Verify Kubernetes Cluster Connection
+        run: |
+          echo "✅ Checking Kubernetes connection..."
+          kubectl cluster-info
+          kubectl get nodes
+          kubectl get deployments -n default
 
       - name: Update Kubernetes Deployment
         run: |
+          echo "🚀 Updating deployment with new image..."
           kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} --namespace=default
           kubectl rollout restart deployment/webber-web --namespace=default
+
+      - name: Verify Deployment Status
+        run: |
+          echo "🔍 Checking deployment status..."
+          kubectl get pods -n default
