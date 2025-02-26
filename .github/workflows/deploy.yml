@@ -46,11 +46,18 @@ jobs:
             registry.digitalocean.com/tppt-registry/webber-web:latest
             registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
 
+      # First decode the kubeconfig to a file
+      - name: Prepare kubeconfig
+        run: |
+          mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+
+      # Then use the action with the file path
       - name: Deploy to Kubernetes
         uses: azure/k8s-set-context@v3
         with:
           method: kubeconfig
-          kubeconfig-base64: ${{ secrets.KUBECONFIG }}
+          kubeconfig: $HOME/.kube/config
           context: do-lon1-my-cluster
 
       - name: Update deployment
