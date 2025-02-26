@@ -49,9 +49,11 @@ jobs:
       - name: Deploy to Kubernetes
         uses: azure/k8s-set-context@v3
         with:
-          kubeconfig: ${{ secrets.KUBECONFIG_BASE64 }}
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBECONFIG }}
+          context: do-lon1-my-cluster
 
       - name: Update deployment
         run: |
-          kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
-          kubectl rollout status deployment/webber-web
+          kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} --namespace=default
+          kubectl rollout status deployment/webber-web --namespace=default
