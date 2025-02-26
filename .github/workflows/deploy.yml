@@ -52,7 +52,7 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Fetch kubeconfig
-        run: doctl kubernetes cluster kubeconfig save do-lon1-my-cluster
+        run: doctl kubernetes cluster kubeconfig save my-cluster
 
       - name: Update deployment
         run: |
