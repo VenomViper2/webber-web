@@ -30,7 +30,7 @@ jobs:
 
       - name: Create 404 page
         run: |
-          if [ -f "dist/webber-web/browser/browser/index.html" ]; then
+          if [ -f "dist/webber-web/browser/index.html" ]; then
             cp dist/webber-web/browser/browser/index.html dist/webber-web/browser/browser/404.html
             echo "404 page created successfully"
           else
