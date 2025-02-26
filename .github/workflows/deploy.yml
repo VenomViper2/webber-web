@@ -25,7 +25,7 @@ jobs:
       - name: Run tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-      - name: Build
+      - name: Build Angular App
         run: npm run build
 
       - name: Create 404 page
@@ -38,10 +38,27 @@ jobs:
             find dist -name "index.html"
           fi
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist/webber-web/browser
-          branch: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
-          clean: true
+      - name: Log in to DigitalOcean Container Registry
+        run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login registry.digitalocean.com -u $DOCKER_USERNAME --password-stdin
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+
+      - name: Build Docker Image
+        run: |
+          docker build -t registry.digitalocean.com/tppt-registry/webber-web:latest .
+          docker tag registry.digitalocean.com/tppt-registry/webber-web:latest registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
+
+      - name: Push Docker Image
+        run: |
+          docker push registry.digitalocean.com/tppt-registry/webber-web:latest
+          docker push registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
+
+      - name: Configure kubectl
+        run: |
+          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > kubeconfig
+          export KUBECONFIG=$(pwd)/kubeconfig
+
+      - name: Update Kubernetes Deployment
+        run: |
+          kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} --namespace=default
+          kubectl rollout restart deployment/webber-web --namespace=default
