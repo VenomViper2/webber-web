@@ -46,13 +46,20 @@ jobs:
             registry.digitalocean.com/tppt-registry/webber-web:latest
             registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
 
-      - name: Configure kubectl
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-          kubectl config use-context do-lon1-my-cluster
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Fetch kubeconfig
+        run: doctl kubernetes cluster kubeconfig save do-lon1-my-cluster
 
       - name: Update deployment
         run: |
-          kubectl set image deployment/webber-web webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} --namespace=default
+          kubectl get pods --namespace=default
+
+          kubectl set image deployment/webber-web \
+              webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} \
+              --namespace=default
+
           kubectl rollout status deployment/webber-web --namespace=default
