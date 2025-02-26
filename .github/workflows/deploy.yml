@@ -31,7 +31,7 @@ jobs:
       - name: Create 404 page
         run: |
           if [ -f "dist/webber-web/browser/index.html" ]; then
-            cp dist/webber-web/browser/browser/index.html dist/webber-web/browser/browser/404.html
+            cp dist/webber-web/browser/index.html dist/webber-web/browser/404.html
             echo "404 page created successfully"
           else
             echo "index.html not found at expected location"
@@ -41,7 +41,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/webber-web/browser/browser
+          folder: dist/webber-web/browser
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
           clean: true
