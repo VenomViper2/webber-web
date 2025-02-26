@@ -16,6 +16,6 @@ spec:
         - name: regcred
       containers:
         - name: webber-web
-          image: registry.digitalocean.com/tppt-registry/webber-web:v1
+          image: registry.digitalocean.com/tppt-registry/webber-web:latest
           ports:
             - containerPort: 80
