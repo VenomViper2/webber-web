@@ -22,18 +22,8 @@ in the `services` package, and these services are called by various pages.
 ## Deployment
 Deployment
 
-* Hosted on GitHub Pages
-* Deployed using the gh-pages package
+* Hosted on https://www.viper-byte.com/
 * Automatic deployment triggered by merged pull requests to master
-* Build process:
-    1. PR to master branch
-    2. Review and merge
-    3. Automatic deployment via GitHub Actions
-
-## TODOs
-- [] Componentise more of the pages, and make the website more modular.
-- [] Make Character details more dynamic, use less tables. 
-- [] Remove over complex View model from cheat sheet.
 
 
 ## Links
