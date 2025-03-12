@@ -11,7 +11,7 @@ spec:
     - host: viper-byte.com
       http:
         paths:
-          - path: /
+          - path: /henge
             pathType: Prefix
             backend:
               service:
@@ -21,7 +21,7 @@ spec:
     - host: app.viper-byte.com
       http:
         paths:
-          - path: /
+          - path: /henge
             pathType: Prefix
             backend:
               service:
@@ -31,7 +31,7 @@ spec:
     - host: www.viper-byte.com
       http:
         paths:
-          - path: /
+          - path: /henge
             pathType: Prefix
             backend:
               service:
