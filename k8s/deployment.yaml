@@ -31,17 +31,3 @@ spec:
             limits:
               cpu: "200m"
               memory: "256Mi"
-          livenessProbe:
-            httpGet:
-              path: /henge/
-              port: 80
-            initialDelaySeconds: 5
-            periodSeconds: 10
-            failureThreshold: 3
-          readinessProbe:
-            httpGet:
-              path: /henge
-              port: 80
-            initialDelaySeconds: 3
-            periodSeconds: 5
-            failureThreshold: 2
