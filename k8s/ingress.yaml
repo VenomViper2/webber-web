@@ -8,30 +8,21 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: viper-byte.com
+    - host: henge.viper-byte.com
       http:
         paths:
-          - path: /henge
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: webber-web-service
                 port:
                   number: 80
-    - host: app.viper-byte.com
+
+    - host: www.henge.viper-byte.com
       http:
         paths:
-          - path: /henge
-            pathType: Prefix
-            backend:
-              service:
-                name: webber-web-service
-                port:
-                  number: 80
-    - host: www.viper-byte.com
-      http:
-        paths:
-          - path: /henge
+          - path: /
             pathType: Prefix
             backend:
               service:
