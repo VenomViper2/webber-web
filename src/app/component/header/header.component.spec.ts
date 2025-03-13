@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
+import { ConfigService } from "../../service/config.service";
 
 
 describe('HeaderComponent', () => {
@@ -10,7 +11,16 @@ describe('HeaderComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            providers: [provideHttpClient()],
+            providers: [
+                    provideHttpClient(),
+                {
+                    provide: ConfigService,
+                    useValue: {
+                        loadConfig: () => Promise.resolve(),
+                        viperBytesUrl: 'https://test-url.com'
+                    }
+                }
+            ],
             imports: [
                 HeaderComponent,
                 RouterModule.forRoot([])
