@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: viper-byte-web-config
+  name: webber-web-config
 data:
   config.json: |
     {
-      "hengeUrl": "https://henge.viper-byte.com/",
+      "hengeUrl": "https://viper-byte.com/",
       "production": true
     }
