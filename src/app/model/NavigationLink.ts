@@ -3,4 +3,5 @@ export interface NavigationLink {
     label: string;
     exact?: boolean;
     dropdownItems?: NavigationLink[];
+    isExternal?: boolean;
 }

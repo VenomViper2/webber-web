@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NavigationLink } from '../../model/NavigationLink';
 import { FeatService } from "../../service/feat.service";
 import { CharacterService } from "../../service/character.service";
+import { ConfigService } from "../../service/config.service";
 
 @Component({
     selector: 'app-header',
@@ -14,22 +15,31 @@ import { CharacterService } from "../../service/character.service";
 })
 export class HeaderComponent implements OnInit {
     isMenuOpen = false;
-    navigationLinks: NavigationLink[] = [
-        {path: '/', label: 'Home', exact: true},
-        {path: '/cheat-sheet', label: 'Cheat Sheet', exact: true},
-        {path: '/map', label: 'Map', exact: true},
-        {path: '/skills', label: 'Skills', exact: true},
-        {path: '/feat-list', label: 'Feats', dropdownItems: []},
-        {path: '/character-list', label: 'Characters', dropdownItems: []},
+    navigationLinks: NavigationLink[] = [];
+    viperByteUrl!: NavigationLink;
 
-    ];
-
-    constructor(private featService: FeatService, private characterService: CharacterService) {
+    constructor(private featService: FeatService, private characterService: CharacterService, private configService: ConfigService) {
     }
+
 
     ngOnInit() {
         this.populateFeats();
         this.populateCharacters();
+        this.viperByteUrl = { isExternal: false, label: "Viper Byte", path: this.configService.viperBytesUrl }
+
+        this.navigationLinks = [
+            {path: '/', label: 'Home', exact: true},
+            {path: '/cheat-sheet', label: 'Cheat Sheet', exact: true},
+            {path: '/map', label: 'Map', exact: true},
+            {path: '/skills', label: 'Skills', exact: true},
+            {path: '/feat-list', label: 'Feats', dropdownItems: []},
+            {
+                path: '/character-list', label: 'Characters', dropdownItems: []
+
+            },
+
+        ];
+
     }
 
 
