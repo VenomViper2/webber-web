@@ -33,7 +33,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/henge/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
