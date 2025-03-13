@@ -24,10 +24,14 @@ spec:
           image: registry.digitalocean.com/tppt-registry/webber-web:latest
           ports:
             - containerPort: 80
-          resources:
-            requests:
-              cpu: "50m"
-              memory: "128Mi"
-            limits:
-              cpu: "200m"
-              memory: "256Mi"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/share/nginx/html/config.json
+              subPath: config.json
+      volumes:
+        - name: config-volume
+          configMap:
+            name: webber-web-config
+            items:
+              - key: config.json
+                path: config.json
