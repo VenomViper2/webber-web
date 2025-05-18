@@ -1,4 +1,4 @@
-name: Angular CI/CD
+name: Angular CI/CD to GitHub Pages
 
 on:
   push:
@@ -22,48 +22,23 @@ jobs:
         run: npm ci
 
       - name: Run tests
+        # Assuming 'npm test' runs tests and exits
+        # If your tests require watching, you might need a different command or setup
         run: npm test -- --watch=false --browsers=ChromeHeadless
 
-      - name: Build Angular app
-        run: npm run build -- --configuration=production --project=webber-web
+      - name: Build Angular app for GitHub Pages
+        # Ensure the base-href is set correctly for your GitHub Pages URL
+        # The format is usually /<repository-name>/
+        run: npm run build -- --configuration=production --project=webber-web --base-href /${{ github.event.repository.name }}/
 
       - name: Create 404 page
+        # Copy the index.html to 404.html for single-page application routing on GitHub Pages
         run: cp dist/webber-web/browser/index.html dist/webber-web/browser/404.html
 
-      - name: Login to DigitalOcean Registry
-        uses: docker/login-action@v2
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          registry: registry.digitalocean.com
-          username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-          password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          tags: |
-            registry.digitalocean.com/tppt-registry/webber-web:latest
-            registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }}
-
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-      - name: Fetch kubeconfig
-        run: doctl kubernetes cluster kubeconfig save my-cluster
-
-      - name: Update deployment
-        run: |
-          kubectl get pods --namespace=default
-          kubectl apply -f k8s/deployment.yaml
-          kubectl apply -f k8s/service.yaml
-          kubectl apply -f k8s/ingress.yaml
-          kubectl apply -f k8s/config-map.yaml
-
-          kubectl set image deployment/webber-web \
-              webber-web=registry.digitalocean.com/tppt-registry/webber-web:${{ github.sha }} \
-              --namespace=default
-
-          kubectl rollout status deployment/webber-web --namespace=default
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/webber-web/browser # Make sure this path matches your Angular build output
+          # You might need to specify the publish branch, default is gh-pages
+          # publish_branch: gh-pages
