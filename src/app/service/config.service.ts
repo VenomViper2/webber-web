@@ -13,7 +13,7 @@ export class ConfigService {
   constructor(private http: HttpClient) {}
 
   loadConfig(): Promise<void> {
-    return this.http.get<AppConfig>('/config.json')
+    return this.http.get<AppConfig>('config.json')
             .toPromise()
             .then(config => {
               this.config = config;
